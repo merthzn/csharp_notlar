@@ -1,0 +1,1882 @@
+//Class Members
+
+/* MyClass m1 = new MyClass();
+m1.a=5;
+m1.b="Mert";
+Console.WriteLine(m1.a);
+Console.WriteLine(m1.b);
+
+
+MyClass m2 = new MyClass();
+m2.a=8;
+m2.b="HAZAN";
+Console.WriteLine(m2.a);
+Console.WriteLine(m2.b);
+
+ class MyClass
+{
+    public int a;
+    public string? b;
+    
+} */
+
+
+//Property
+
+//Full Property
+
+
+/* MyClass m1 = new MyClass();
+Console.WriteLine(m1.Yasi); // get blogu tetiklenir
+m1.Yasi = 65; // set bblogu tetiklenir
+Console.WriteLine(m1.Yasi); // atanan degeri yazdirir.Ancak iceride ne tutuldugunu bilemeyiz
+Banka banka = new Banka();
+banka.Bakiye=100;
+Console.WriteLine(banka.Bakiye);
+ class MyClass
+{
+    int yasi;
+    
+    //property hangi turden bir field ı temsil ediyorsa o turden olmalıdır...
+    // Property ler temsil ettikleri field ların isimlerinin bas harfi buyuk olacak sekilde isimlendirilir.
+    public int Yasi
+    {
+        get
+        {
+            //Property uzerinden deger talep edildiginde bu bblok tetiklenir.Yani deger buradan dondurulur.
+            return yasi;
+        }
+        
+        set
+        {
+            yasi = value ;
+        }
+    }
+}
+
+class Banka
+{
+    int bakiye;
+    public int Bakiye
+    {
+        get
+        {
+            if(bakiye>0)
+            return bakiye*10/100;
+            return 5;
+        }
+        set
+        {
+            if(value < 10)
+            bakiye=value;
+            else
+            bakiye=value*95/100;
+        }
+    }
+}
+
+//Eger ki property nin icine sadece get kısmını acarsak sadece degeri okuyabiliriz ama deger atayamayiz.
+//Eger ki property nin icine sadece set kismini acarsak sadece degeri gonderebiliriz ama degeri yazdiramayiz. */
+
+
+//Prop Property
+
+/* MyClass m1 = new MyClass();
+
+m1.Yasi = 15; 
+Console.WriteLine(m1.Yasi); 
+
+ class MyClass
+{
+   // int yasi; Compiler otomatik tanımlar gerek yok
+    public int Yasi{get;set;}
+    
+}
+
+//public int MyProperty { get; set; }//Prop yazinca otomatik oluşmakta. */
+
+
+//Auto Property İnitializers
+
+//public int Yasi{get;set;} = 15;
+
+//Prop ile tanımlanan tum properttler readonly olabiliyor ancak writeonly olamaz.
+
+
+//Ref Readonly Returns
+
+/* MyClass m1 = new MyClass();
+
+Console.WriteLine(m1.Adi); 
+
+ class MyClass
+{
+   // int yasi; Compiler otomatik tanımlar gerek yok
+  //  public string Adi { get; set; } = "Mert HAZAN";
+  string? adi = "Mert HAZAN";
+  public ref readonly string? Adi => ref adi; // ozel bir yontem çokta onemli degil su an
+    
+} */
+
+
+
+//Class Yapısına Dair Son Dokunuşlar
+
+/* MyClass m1 = new MyClass();
+MyClass.MyClass2 m2 = new MyClass.MyClass2(); // Bu sekilde class 2 ye erisebiliriz
+
+
+
+//Class Elemanlarina Acıklama Satırı Nasıl Eklenir? 3 tane  / ekleyince otomatik gelir
+
+
+/// <summary>
+/// Bu bbir class dır.
+/// </summary>
+
+
+
+class MyClass
+{
+
+int a;
+/// <summary>
+/// Bu bir property dir.
+/// </summary>
+public int MyProperty { get; set; }
+
+/// <summary>
+/// Bu bir ornek metotdur.
+/// </summary>
+
+public void X() { }
+/// <summary>
+/// Bu bir ornek overload metodudur.
+/// </summary>
+/// <param name="a"></param>
+public void X(int a) { }
+
+
+public int this[int a]
+{
+   get { return 0; }
+}
+
+/// <summary>
+/// Bu bir nested class dır.
+/// </summary>
+public class MyClass2  // ayrı bir class
+    {
+        
+
+    }
+
+} */
+
+
+
+//this Keyword'ü Nedir? İşlevleri Nelerdir?
+
+// 1. Sınifin Nesnesini Temsil Eder
+/*MyClass m1 = new MyClass();
+MyClass m2 = new MyClass();
+
+class MyClass
+{
+    public void X()
+    {
+        this.X();
+    }
+} */
+
+
+//2. Aynı İsimde Field İle Metot Parametrelerini Ayırmak İçin Kullanılır
+
+/* MyClass m1 = new MyClass();
+MyClass m2 = new MyClass();
+
+class MyClass
+{
+   int a;
+
+    public void X(int a)
+    {
+       // a parametreye erişir
+       this.a; // class ın icindeki member a ya erisir.
+    }
+} */
+
+//this keywordu ilgili class yapılanmasının o anki nesnesine karşılık gelir.
+//this kullanmak zorunda değiliz.
+
+
+
+// 3. Bir Constructer'dan Başka Bir Constructer'1 Çağırmak İçin Kullanılır
+
+
+
+//Nesne Kavramı Nedir? Nesne Nasıl Oluşturulur? | new Operatörü
+
+/* MyClass m1 = new MyClass();
+MyClass m2 = new();
+
+class MyClass
+{
+    public int A { get; set; }
+
+    public void X()
+    {
+        
+    }
+
+} */
+
+
+
+
+//Object Initializer İle Nesne Oluşturma Esnasında Propertylere İlk Değer Atama
+
+
+/* MyClass m = new MyClass();
+m.MyProperty=12; */
+
+/* MyClass m = new MyClass()
+{
+    a = 5,
+    MyProperty = 10 ,
+    MyProperty2 =20,
+    MyProperty3 = 30
+};
+
+MyClass m2 = new MyClass();
+m2.MyProperty =10;
+
+
+class MyClass
+{
+    public int a;
+    public int MyProperty { get; set; }
+    public int MyProperty2 { get; set; }
+
+    public int MyProperty3 { get; set; }
+
+
+}  */
+
+
+
+
+//Nesne Kopyalama Davranışları | Shallow Copy | Deep Copy
+
+
+//Shallow Copy
+
+//Ornek 1
+
+/* MyClass m1 = new MyClass();
+MyClass m2 = m1;
+MyClass m3 = m2;
+MyClass m4 = new MyClass();  */
+
+//Ornek 2
+
+/* MyClass? m1 = null;
+MyClass m2 = new MyClass();
+MyClass m3 = m2;
+m1=m3; */
+
+//Ornek 2
+
+/*MyClass m1 = new MyClass();
+MyClass m2 = new MyClass();
+MyClass m3 = m1;
+m1=m2;
+m2=m1;
+
+class MyClass
+{
+    
+} */
+
+
+//Deep Copy
+
+/* MyClass m1 = new MyClass();
+MyClass m2 = m1; //shallow copy
+MyClass m3 = m1.Clone(); //deep copy
+
+
+
+class MyClass
+{
+    public MyClass Clone()
+    {
+       return (MyClass) this.MemberwiseClone();
+    }
+}  */
+
+
+
+//Eski encapsuation uygulaması
+
+/* MyClass m1 = new MyClass();
+m1.ASet(15);
+Console.WriteLine(m1.AGet());
+
+
+class MyClass
+{
+   int a;
+   public int AGet()
+   {
+       return this.a;
+   }
+
+   public void ASet(int value)
+   {
+       this.a = value;
+   }
+} */
+
+//Property İle Encapsulation
+
+
+/* MyClass m1 = new MyClass();
+
+m1.A = 12345;  // set blogu
+Console.WriteLine(m1.A);  // get blogu
+
+ class MyClass
+{ 
+    private int a;
+    public int A
+    {
+        get { return a; }
+        set { a = value; }
+    }
+    
+} */
+
+
+
+//Class Uygulama BTK
+
+/* Ogrenci ogr1 = new Ogrenci();
+Ogrenci ogr2 = new Ogrenci();
+Ogrenci ogr3 = new Ogrenci();
+
+ogr1.AdSoyad="Mert HAZAN";
+ogr1.OgrenciNo="100";
+ogr1.Sube="1";
+
+ogr2.AdSoyad="Sude Bulbul";
+ogr2.OgrenciNo="200";
+ogr2.Sube="1";
+
+ogr3.AdSoyad="Onur HAZAN";
+ogr3.OgrenciNo="300";
+ogr3.Sube="2"; */
+
+/*Console.WriteLine($"{ogr1.OgrenciNo} no lu {ogr1.AdSoyad} adli {ogr1.Sube} subesindeki ogrenci");
+Console.WriteLine($"{ogr2.OgrenciNo} no lu {ogr2.AdSoyad} adli {ogr2.Sube} subesindeki ogrenci");
+Console.WriteLine($"{ogr3.OgrenciNo} no lu {ogr3.AdSoyad} adli {ogr3.Sube} subesindeki ogrenci");*/
+
+/*
+Ogrenci[] ogrenciler = new Ogrenci[3];
+ogrenciler[0]=ogr1;
+ogrenciler[1]=ogr2;
+ogrenciler[2]=ogr3;
+
+foreach(var ogrenci in ogrenciler)
+Console.WriteLine($"{ogrenci.OgrenciNo} no lu {ogrenci.AdSoyad} adli {ogrenci.Sube} subesindeki ogrenci"); */
+
+/* class Ogrenci
+{
+    //property
+    public string OgrenciNo { get; set; }
+    public string AdSoyad { get; set; }
+    public string Sube { get; set; }
+} */
+
+
+/* Ogrenci ogr1 = new Ogrenci() {AdSoyad="Mert HAZAN", OgrenciNo="100", Sube="1"};
+Ogrenci ogr2 = new Ogrenci() {AdSoyad="Sude Bulbul", OgrenciNo="200", Sube="1"};
+Ogrenci ogr3 = new Ogrenci() {AdSoyad="Onur HAZAN", OgrenciNo="300", Sube="2"};
+
+Ogrenci[] ogrenciler = new Ogrenci[3] {ogr1,ogr2,ogr3};
+
+foreach(var ogrenci in ogrenciler)
+ogrenci.BilgileriYazdir();
+
+ class Ogrenci
+{
+    //property
+    public string OgrenciNo { get; set; }
+    public string AdSoyad { get; set; }
+    public string Sube { get; set; }
+
+    public void BilgileriYazdir()
+    {
+        Console.WriteLine($"{this.OgrenciNo} no lu {this.AdSoyad} adli {this.Sube} subesindeki ogrenci");
+    }
+} */
+
+
+//  Methods Uygulama 2
+
+/* var soru1 = new Soru()
+{
+    SoruMetni = "Hangisi bir programlama dili degildir?",
+    Secenekler = new string[4] {"Python","C#","Java","Html"},
+    Cevap = "Html",
+};
+
+var soru2 = new Soru()
+{
+    SoruMetni = "Hangisi en populer programlama dilidir?",
+    Secenekler = new string[4] {"Python","C#","Java","Html"},
+    Cevap = "C#",
+};
+
+var soru3 = new Soru()
+{
+    SoruMetni = "Hangisi en populer webb programlama platformu degildir?",
+    Secenekler = new string[4] {"Django","Asp.net","Spring","Python"},
+    Cevap = "Python",
+};
+
+var sorular = new Soru[] {soru1,soru2,soru3};
+
+foreach(var soru in sorular)
+{
+    Console.WriteLine(soru.SoruMetni);
+    foreach(var secenek in soru.Secenekler)
+    {
+        Console.WriteLine(secenek);
+    }
+
+    //kullanıcıdan cevap alalım
+
+    Console.Write("Cevabiniz : ");
+    var cevap = Console.ReadLine();
+
+    if(soru.cevapKontrol(cevap))
+    {
+        Console.WriteLine("Dogru cevap , Bravo");
+    }
+    else
+    {
+        Console.WriteLine("Yanlis cevap , Gecmis olsun");
+        
+    }
+}
+
+class Soru
+{
+    public string SoruMetni { get; set; }
+    public string[] Secenekler { get; set; }
+    public string Cevap { get; set; }
+
+    public bool cevapKontrol(string cevap)
+    {
+        return this.Cevap.ToLower() == cevap.ToLower();
+    }
+
+} */
+
+
+// INIT - ONLY PROPERTİES
+
+/* MyClass my = new MyClass
+{
+    MyProperty=3,
+    A = 5
+};
+
+ // my.MyProperty = 123; init only properties nedeni ile burada deger atayamayız
+
+
+class MyClass
+{
+        readonly int a;  // ya tanımlandıgı yerden ya da constructer metodundan deger atanabilir.
+        public int A
+    {
+        get
+        {
+            return a;
+        }
+        init
+        {
+            a=value;
+        }
+    }
+        public int MyProperty {get;init;}=3;
+} */
+
+
+
+//Record Nedir Nasıl Tanımlanır
+
+/*MyClass m1 = new MyClass()
+{
+    MyProperty  =  5
+};
+MyClass m2= new MyClass()
+{
+    MyProperty = 5
+};
+
+Console.WriteLine(m1.Equals(m2));
+
+MyRecord m3 = new MyRecord()
+{
+    MyProperty = 5
+};
+MyRecord m4 = new MyRecord()
+{
+    MyProperty = 5
+    
+};
+
+Console.WriteLine(m3.Equals(m4));  // Esit olarak gorunur.
+
+
+
+record MyRecord
+{
+    public int MyProperty { get; init; } // init degeri on plana cıkarır.
+    public void X()
+    {
+        
+    }
+    public MyRecord()
+    {
+        
+    }
+    ~MyRecord()
+    {
+        
+    }
+    static MyRecord()
+    {
+        
+    }
+
+}
+
+class MyClass
+{
+    public int MyProperty { get; set; }
+} */
+
+
+
+//With Expressions
+
+/* MyClass m = new MyClass
+{
+    MyProperty3 = 5,
+    MyProperty4 = 10
+};
+
+// m.MyProperty3 = 15;  ReadOnly oldugu icicn boyle yapamayiz
+
+MyClass m2 = new MyClass
+{
+    MyProperty3 = 5,
+    MyProperty4 = 15
+}; 
+
+MyClass m2 = m.with(15); */
+
+/* MyRecord m = new MyRecord
+{
+    MyProperty1 = 5,
+    MyProperty2 = 10
+};
+MyRecord m2 = m with {MyProperty2=15}; //Tercih edilen yontem 
+
+
+
+record MyRecord
+{
+    public int MyProperty1 { get; set; }
+    public int MyProperty2 { get; set; }
+}
+
+
+
+class MyClass
+{
+    public int MyProperty3 { get; set; }
+    public int MyProperty4 { get; set; }
+    public MyClass with(int property2)
+    {
+        return new MyClass
+        {
+          MyProperty3 = this.MyProperty3,
+          MyProperty4 = property2
+        };
+    }
+
+} */
+
+
+
+//Constructor Metot Nasıl Olusturulur?
+
+/* new MyClass(15);
+new MyClass();
+//new MyClass();
+//new MyClass();
+//new MyClass();
+
+MyClass m = new("Merhaba"); // Bu da constructor metodunu tetikler. */
+
+
+/* class MyClass
+{
+    public MyClass(int a ) //Constructor metot parametre alabilir.
+    {
+        Console.WriteLine("Bir adet myclass nesnesi olusturulmustur." + a);
+    }
+
+     public MyClass() 
+    {
+        Console.WriteLine("Bir adet myclass nesnesi olusturulmustur.");
+    }
+
+     public MyClass(string a ) //Constructor metot parametre alabilir.
+    {
+        Console.WriteLine("Bir adet myclass nesnesi olusturulmustur." + a);
+    }
+
+
+    /*public void MyClass() // normal bir member sınıf ismi ile aynı olamaz.
+    {
+        
+    } 
+
+
+} */
+
+
+//This Keywordu ile Constructorlar arası geçis
+
+
+//new MyClass();
+/*new MyClass(5,10);
+
+class MyClass
+{
+    public MyClass()
+    {
+        Console.WriteLine("1. Constructor");
+    }
+
+    public MyClass(int a) : this()
+    {
+        Console.WriteLine($"2. Constructor : a = {a}");
+        
+    }
+
+    public MyClass(int a , int b) : this(a)
+    {
+        Console.WriteLine($"3. Constructor : a = {a} | b = {b}");
+        
+    }
+} */
+
+
+//Record larda Constructor || Class dan bir farki yoktur.
+
+
+/* new MyRecord(5,10);
+
+class MyRecord
+{
+    public MyRecord()
+    {
+        Console.WriteLine("1. Constructor");
+    }
+
+    public MyRecord(int a) : this()
+    {
+        Console.WriteLine($"2. Constructor : a = {a}");
+        
+    }
+
+    public MyRecord(int a , int b) : this(a)
+    {
+        Console.WriteLine($"3. Constructor : a = {a} | b = {b}");
+        
+    }
+} */
+
+
+
+// Özel Sınıf Elemanları - Destructor Metot Nedir?
+
+
+//MyClass m = new MyClass();
+
+/* X();
+GC.Collect(); //Garbage Collector devreye sokulmuş oldu tavsiye edilmez.
+Console.ReadLine();
+
+static void X()
+{
+    MyClass m = new MyClass();
+}
+class MyClass
+{
+    public MyClass()
+    {
+        Console.WriteLine("Nesne uretilmistir");
+    }
+ 
+    ~ MyClass()
+    {
+        Console.WriteLine("Selametle...");  //bu yazıyı cıktı olarak direk goremeyiz.
+    }
+
+} */
+
+/* int sayi=100;
+while(sayi>=1)
+{
+    new MyClass2(sayi--);
+}
+Console.WriteLine("******************");
+GC.Collect();
+Console.ReadLine();
+class MyClass2
+{
+    int no;
+    public MyClass2(int no)
+    {
+        this.no=no;
+        Console.WriteLine($"{no}. nesne olsuturulmustur.");
+    }
+ 
+    ~ MyClass2()
+    {
+        Console.WriteLine($"{no}. nesne imha edilmistir.");
+
+    }
+
+}  */
+
+
+
+
+// Özel Sınıf Elemanları - Deconstruct Metot Nedir?
+
+
+/*Person person = new Person
+{
+    Name = "Mert",
+    Age = 19
+};
+var(x,y)=person;
+
+
+
+class Person
+{
+    public String Name{ get; set; }
+    public int Age { get; set; }
+
+    public void Deconstruct(out string name,out int age)
+    {
+        name = Name;
+        age = Age;
+    }
+} */
+
+
+
+
+//Özel Sınıf Elemanları - Static Constructor Metot Nedir?
+
+
+/* new MyClass();
+new MyClass();
+
+
+class MyClass
+{
+    public MyClass()
+    {
+        //Bu sınıftan  nesne uretilirken ilk tetiklenecek olan metoddur.
+        Console.WriteLine("MyClass constructor u tetiklenmistir.");
+    }
+    static MyClass() // Geri donus degeri ve erisim belirleyicisi tanımlanmaz.Overloading yapılmaz bir sınıfın icinde sadece 1 tane olur.
+    {
+        //Bu sınıftan ilk nesne uretilirken ilk tetiklenecek olan metoddur.
+        //Uretilen ilk nesnenin dısında bir daha tetiklenmez!
+        Console.WriteLine("MyClass STATIC constructor u tetiklenmistir.");
+        //Static construct'ın tetiklenebilmesi için illa ilk nesne üretimi
+        //yapılmasına gerek yoktur. İlgili sınıf içerisinde herhangi bir static
+        //yapılanmanında tetiklenmesi static cosnt. tetiklenmesini sağlayacaktır.
+        
+    } 
+} */
+
+
+//Singleton Design Pattern
+
+//Bir sınıftan uygulama bazında sade ve sadece tek bir nesne oluşturulmasını istiyorsan kullanabileceğin bir design pattern.
+
+
+// new Database(); erisemiyoruz.
+
+/* var database1 = Database.GetInstance;
+var database2 = Database.GetInstance;
+var database3 = Database.GetInstance;
+database1.ConnectionString = "fhfdhdhssdhsdjhdsj";
+
+class Database
+{
+    Database()
+    {
+        
+    }
+    public string ConnectionString { get; set; }
+    static Database database;
+
+    static public Database GetInstance
+    {
+        get
+        {
+            return database;
+        }
+    }
+
+    static Database()
+    {
+        database = new Database();
+    }
+} */
+
+
+
+//Positional Record Nedir?
+
+/* MyRecord m = new MyRecord("Mert","HAZAN");
+var(n,s)=m;
+Console.WriteLine(m.name);
+Console.WriteLine(m.surname);
+
+
+record MyRecord(string name,string surname) //Parametre tanımlayınca positional record olur
+{
+    //parametrelerin karsılıgı compiler seviyesinde otomatik olarak olusturulur prop girmek zorunda degiliz.
+    public MyRecord() : this("Mert","HAZAN")
+    {
+        
+    }
+    public MyRecord(string name) : this()
+    {
+        
+    }
+    public string Name => name;
+    public string Surname => surname;
+
+} */
+
+
+
+//Inheritance(Kalıtım) Nedir?
+
+/*Muhasebeci muhasebeci = new Muhasebeci();
+Mudur mudur = new Mudur();
+Yazilimci yazilimci = new Yazilimci();
+
+
+
+class Personel
+{
+    public string Adi { get; set; }
+    public string Soyadi{ get; set; }
+    public bool MedeniHal { get; set; }
+}
+
+
+class Muhasebeci : Personel
+{
+    public bool Musavir { get; set; }
+}
+class Yazilimci : Personel
+{
+    public string[] KullandigiDiller {get;set;}
+}
+class Mudur : Personel
+{
+    
+} */
+
+
+//Base - Derived Class Ilıskisi / Base Keywordu
+
+/* class BuyukBaba
+{
+    
+}
+
+class Baba : BuyukBaba
+{
+    
+}
+
+class Ogul : Baba  //Bir class ın sadece 1 tane base class ı olabilir.
+{
+    
+} */
+
+
+
+/* new D(); // A dan baslayarak  D ye kadar gider 
+class A
+{
+    public  A()
+    {
+    Console.WriteLine($"{nameof(A)}");
+    }
+}
+
+class B : A
+{
+    public  B()
+    {
+    Console.WriteLine($"{nameof(B)}");
+    }
+}
+
+class C : B
+{
+    public  C()
+    {
+    Console.WriteLine($"{nameof(C)}");
+    }
+}
+
+class D : C
+{
+    public  D()
+    {
+    Console.WriteLine($"{nameof(D)}");
+    }
+} */
+
+
+/* class MyClass
+{
+    public MyClass(int a)
+    {
+        
+    }
+
+    public MyClass() // MyClass2 de base keyword unu kullanmaya gerek yok.
+    {
+        
+    }
+}
+
+class MyClass2 : MyClass
+{
+    public MyClass2() : base(5) // base class in parametresini getirir.
+    {
+        
+    }
+
+    public MyClass2(int a) : base(a) 
+    {
+        
+    }
+} */
+
+// this ile base keyword u farkı
+
+/* class A
+{
+    int a;
+    public int b;
+    public int MyProperty { get; set; }
+}
+
+class B : A
+{
+    int c;
+    public void X()
+    {
+        this.b;
+        base.MyProperty
+        MyProperty = 123; //Bu sekilde de kullanabiliriz compiler otomatik olarak algılar.
+    }
+} */
+
+//Name Hiding Durumunda New Keywordu kullanımı
+
+/* D d = new D();
+d.X // d den erisebiliyoruz.
+class A
+{
+    public void X()
+    {
+        
+    }
+}
+
+class B : A
+{
+    
+}
+
+class   C : B
+{
+    
+}
+
+class D: C
+{
+    public new void X() // name hiding new ile günümüzde zorunlu degil.
+    {
+        
+    }
+} */
+
+
+//Sanal Yapılar | virtual - override
+
+/* Terlik t = new Terlik();
+t.Bilgi();
+
+Kalem k = new Kalem();
+k.Bilgi();
+
+
+class Obje
+{
+     virtual public void Bilgi()
+    {
+        Console.WriteLine("Ben bir objeyim");
+    }
+}
+
+class Terlik : Obje
+{
+    override public void Bilgi()
+    {
+        Console.WriteLine("Ben bir terligim");
+    }
+}
+
+class Kalem : Obje
+{
+    public override void Bilgi()
+    {
+      Console.WriteLine("Ben bir kalemim");
+    }
+} */
+
+
+//Ornek 2
+
+/* Maymun m = new Maymun();
+m.Konus();
+Inek i = new Inek();
+i.Konus();
+
+class Memeli
+{
+    public virtual void Konus()
+    {
+        Console.WriteLine("Ben Konusmuyorum...");
+    }
+}
+
+class Maymun : Memeli
+{
+    public override void Konus()
+    {
+        Console.WriteLine("Ben maymunum..");
+    }
+}
+
+class Inek : Memeli
+{
+    public override void Konus()
+    {
+        Console.WriteLine("Ben inegim...");
+    }
+} */
+
+
+//Ornek 3
+
+/* Ucgen u = new Ucgen(3,4);
+Console.WriteLine(u.AlanHesapla());
+Dortgen dg  = new Dortgen(3,4);
+Console.WriteLine(dg.AlanHesapla());
+Dikdortgen d = new Dikdortgen(3,4);
+Console.WriteLine(d.AlanHesapla());
+class Sekil
+{
+   protected int _boy;
+    protected int _en;
+    public Sekil(int boy , int en)
+    {
+        _boy = boy;
+        _en = en;
+    }
+    virtual public int AlanHesapla()
+    {
+        return 0;
+    }
+}
+
+class Ucgen : Sekil
+{
+    public Ucgen(int boy , int en) : base(boy,en)
+    {
+        
+    }
+
+    public override int AlanHesapla()
+    {
+        return (int)  _boy*_en /2 ;
+    }
+}
+
+class Dortgen : Sekil
+{
+    public Dortgen(int boy , int en) : base(boy,en)
+    {
+       
+    }
+
+    public override int AlanHesapla() 
+    {
+         return (int) _boy*_en  ;
+    }
+}
+
+class Dikdortgen : Sekil
+{
+    public Dikdortgen(int boy , int en) : base(boy,en)
+    {
+        
+    }
+
+    public override int AlanHesapla()
+    {
+         return (int) _boy*_en ;
+    }
+} */
+
+
+
+
+
+//Polimorfizm (Cok Bicimlilik) Nedir? Derinlemesine İnceleme
+
+/*MyClass2 m = new MyClass(); // MyClass2 referans eder.
+class MyClass : MyClass2
+{
+    
+}
+
+class MyClass2
+{
+    
+}*/
+
+/*A a = new B();
+B b = new B();
+C c = new B(); // ATASI OLMADIGINDAN DOLAYI HATA VERİR A YI C DEN TURET
+class B : A
+{
+    
+}
+
+class A : C
+{
+    
+}
+
+class C
+{
+    
+} */
+
+/* Insan i = new Erkek();
+Insan i2 = new Kadin();
+class Insan
+{
+    
+}
+
+class Erkek : Insan
+{
+    
+}
+
+class Kadin : Insan 
+{
+    
+} */
+
+//Ornek
+
+/* C c = new C();
+c.X();
+c.Y();
+c.Z();
+
+B b = new C();
+b.X();
+b.Y();
+// b.Z()  ye ulasamıyoruz b referansının davranıslarına ulasabiliriz.
+
+A a = new C();
+a.X(); //sadece a nın memberlarına ulasabiliriz.
+class A 
+{
+    public void X()
+    {
+        
+    }
+}
+class B : A
+{
+    public void Y()
+    {
+        
+    }
+}
+class C : B
+{
+    public void Z()
+    {
+        
+    }
+} */
+
+
+//Polimorfizm Türleri ve Tür Dönüşüm Operatörleri
+
+/*A a = new C();
+C c = (C)a;
+
+D d = (D)a;
+
+object O = 123;
+int i = (int)O;
+
+
+
+class A {}
+
+class B : A {}
+
+class C : B {}
+
+class D {} */
+
+//as operatoru
+
+
+/*A a = new C();
+
+// D d = (D)a;  //Hata verir
+D d = a as D; //NULL DONER
+
+class A {}
+
+class B : A {}
+
+class C : B {}
+
+class D : C {}  */
+
+
+// is operatoru
+
+/* A a = new C() { X = "1" , Y = "1" , Z = "1" };
+
+Console.WriteLine(a is B);
+Console.WriteLine(a is C);
+Console.WriteLine(a is A);
+// Console.WriteLine(a is D); hata verir.
+
+class A {}
+class B : A{}
+class C : B { public string X ; public string Y ;public string Z;}
+class D {} */
+
+
+// Sınıf Modeline Özel Keyword'ler | this | base | readonly
+
+//this keywordu
+
+//Bir sınıfın ,uygulamanın herhangi bir noktasında uretilmiş olan instance 
+//larını/objectlerini/nesnelerini sınıf icerisinde temsil etmemizi saglayan 
+//bir keyworddur
+
+//this keywordu bir sınıf icerisinde bulunan birden fazla constructor overload ı
+//arasında zıplamamızı yahut atlamamızı saglayan bir keyworddur.
+
+/*new MyClass(3, " ");
+class MyClass
+{
+    public int MyProperty { get; set; }
+    public  MyClass()
+    {
+        Console.WriteLine("Bos constructor");
+    }
+
+    public  MyClass(int a) : this()
+    {
+        Console.WriteLine("a parametreli constructor");
+    }
+
+    public  MyClass(int a , string b) : this(a)
+    {
+        // MyProperty = 10
+        this.MyProperty = 10; // this yazmasak da olur.
+        Console.WriteLine("a ve b parametreli constructor");
+    }
+} */
+
+
+// Base keywordu
+
+//base keywordu bir instance base class ını sınıf modeli icerisinde temsil eden bir keyworddur.
+
+/* new MyClass2();
+class MyClass
+{
+    public MyClass()
+    {
+        Console.WriteLine("Bos constructor");
+    }
+
+    public MyClass(int a) : this()
+    {
+        Console.WriteLine("a parametreli constructor");
+    }
+
+    public MyClass(int a , string b) : this(a)
+    {
+        Console.WriteLine("a ve b parametreli constructor");
+    }
+}
+
+class MyClass2 : MyClass
+{
+    public MyClass2() : base(3, " ")
+    {
+        Console.WriteLine("Son parametre");
+    }
+} */
+
+
+//readonly keywordu
+
+//bir class icerisinde tanımlanmış olan degiskenin yahut referansın sadece okunabilir olmasını saglayan bir keyworddur.
+
+//readonly keywordu ile isaretlenmis olan referansların degerleri ya tanımlama noktasında ya da constructor da verilebilir
+
+/*class MyClass
+{
+    readonly object x = 5;
+    public MyClass()
+    {
+        x = 15;
+    }
+
+    public void X()
+    {
+       // x=155; burada x e ulasamayız.
+    }
+} */
+
+
+//sealed Keyword'ü Nedir? Ne Amaca Hizmet Etmektedir?
+
+
+/*Bir sınıfın miras vermesini yahut bir başka deyişle başka bir sınıf tarafından miras
+alınmasını engelleyen bir keyword'dür. */
+
+/*sealed class A
+{
+    
+}
+
+class B : A
+{
+    SEALED CLASS A OLDUGU ICIN BU OLMAZ.
+} */
+
+
+/* class A
+{
+    public virtual void X()
+    {
+        Console.WriteLine("Merhaba A");
+    }
+}
+
+class B : A
+{
+    sealed public override void X() // c ye aktarılmaz
+    {
+       Console.WriteLine("Merhaba B");
+    }
+}
+
+class C : B 
+{
+    public  void X() // overide edilemez direk x olarak aktarılır.
+    {
+        Console.WriteLine("Merhaba C");
+    }
+} */
+
+
+//Partial Yapılanmaları İnceleyelim
+/*
+partial class MyClass()
+{
+
+    partial class MyClass2
+    {
+        //bu sekilde nested da kullanılabilir.
+    }
+    public void A()
+    {
+        
+    }
+}
+
+partial class MyClass()
+{
+    public void B()
+    {
+        
+    }
+}
+
+partial class MyClass()
+{
+    public void C()
+    {
+        
+    }
+}*/
+
+
+//partial record
+
+/*using X;
+namespace X;
+partial record X()
+{
+    
+}
+
+partial record X()
+{
+    
+}*/
+
+//partial abstract class
+
+/* abstract partial class MyClass
+{
+    
+}
+
+abstract partial class MyClass
+{
+    
+} */
+
+//partial struct
+
+/*partial struct C
+{
+    
+}
+partial struct C
+{
+    
+}
+partial struct C
+{
+    
+}*/
+
+// PARTİAL METOTLAR
+
+/*new MyClass();
+partial class MyClass
+{
+    partial void X();
+    partial void Y();
+
+    partial void Z();
+
+    partial void Y()
+    {
+        Console.WriteLine("Y tetiklendi");
+    }
+}*/
+
+//Abstraction Kavramı Nedir?
+/* using System;
+
+UserService userService = new();
+IUserValidateService userValidateService = userService;
+
+
+interface IUserValidateService
+{
+    bool ValidateUser(UserInfo userInfo);
+}
+
+class UserService : IUserValidateService
+{
+    public void CreateUser(UserInfo userInfo)
+    {
+        
+    }
+
+    public void RemoveUser(int userId)
+    {
+        
+    }
+
+    public List <User> Users {get;set;}
+
+    public bool ValidateUser(UserInfo userInfo)
+    {
+        return true;
+    }
+
+
+} */
+
+
+//Abstract Class Nedir? Ne Amaçla Kullanılmaktadır?
+
+/*new _A();
+
+abstract class A
+{
+    public A()
+    {
+        Console.WriteLine("A Abstract classı");
+    }
+}
+
+class _A : A
+{
+    public _A()
+    {
+        Console.WriteLine("_A  classı"); // kalıtımsal olarak A abstact classından da bir nesne olusturulur.
+    }
+}*/
+
+/* abstract class MyAbstractClass
+{
+    int a;
+
+    public void X()
+    {
+        
+    }
+    public int MyProperty { get; set; }
+
+    abstract public void Z();
+    abstract public void W(string a , int b);
+   abstract  public int Y { get; set; }
+   abstract public bool H();
+
+}
+
+//Abstract Class icerisindeki abstract yapıların concrete class ıcerisindeki tanımları public olmak zorundadır.
+class MyClass : MyAbstractClass //ctrl+.+enter yap
+//abstract classı uygylayan sınıflara terminolohik olarak Concrete Class denir.
+{
+    public override int Y { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+    public override bool H()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void W(string a, int b)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void Z()
+    {
+        throw new NotImplementedException();
+    }
+} */
+
+
+/*abstract class MyClass
+{
+    abstract public void W();
+    abstract public int Q();
+    abstract public int H { get; set; }
+
+}
+
+abstract class MyClass2 : MyClass //İnheritence
+{
+    abstract public void A();
+    abstract public int  B();
+    abstract public int C { get; set; }
+
+}
+
+class MyClass3 : MyClass2  // İmplementation
+{
+    public override int C { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+    public override int H { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+    public override void A()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override int B()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override int Q()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void W()
+    {
+        throw new NotImplementedException();
+    }
+}*/
+
+
+// Interface Nedir? Ne Amaçla Kullanılmaktadır
+
+/*Bir class nerede tanımlanabiliyorsa
+interface'de orada tanımlanabilir. Herhangi
+bir namespace, class, struct yahut interface
+içerisinde interface tanımalanabilir. Ya da
+isterseniz namespace dışında da tanımlama
+yapabilirsiniz.*/
+//interface ler sınıfların imzasıdır.
+
+// IMyInterface a = null; referans turludur.
+
+/*class MyClass : IMyInterface
+{
+    public int Z { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+    public void X()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Y(int a)
+    {
+        throw new NotImplementedException();
+    }
+}
+
+
+
+
+interface IMyInterface
+{
+     void X();
+     void Y(int a);
+     int Z{ get; set; }
+}
+
+abstract class  MyAbstractClass
+{
+    abstract public void X();
+    abstract public void Y(int a);
+    abstract public int Z{ get; set; }
+    public bool D()
+    {
+        return true;
+    }
+
+}*/
+
+
+/*class MyClass : IC // IC inheritence den gelenlerle(A VE B) beraber implemente edilir.
+{
+    public void A()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void B()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void C()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void D()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void W()
+    {
+        throw new NotImplementedException();
+    }
+}
+
+interface IA
+{
+    void A();
+}
+
+interface IB : IA
+{
+    void B();
+    
+}
+
+interface IC : IB , ID , IW
+{
+    void C();
+    
+}
+
+interface ID
+{
+    void D();
+    
+}
+
+interface IW
+{
+    void W();
+    
+} */
+
+//Interface - Explicity Implement & Default Implementation
+
+/*Birden fazla interface'de aynı
+isimde bulunan imzaların tek bir
+sınıfa uygulatılmasına Name
+Hiding denmektedir!*/
+
+/*class MatematikIslemleri : IMatematikIslemleri
+{
+    public int Bol(int s1, int s2)
+    {
+        throw new NotImplementedException();
+    }
+
+    public int Carp(int s1, int s2)
+    {
+        throw new NotImplementedException();
+    }
+
+    public int Cikar(int s1, int s2)
+    {
+        throw new NotImplementedException();
+    }
+
+    public int Topla(int s1, int s2)
+    {
+        throw new NotImplementedException();
+    }
+}
+
+interface IMatematikIslemleri
+{
+    int Topla(int s1 , int s2);
+    int Cikar(int s1 , int s2);
+
+    int Bol(int s1 , int s2);
+
+    int Carp(int s1 , int s2);
+
+}*/
+
+/*MyClass m = new();
+IA a = m;
+a.X(); // x private oldugundan ancak referansla ulasabiliriz.
+
+IB b  = m;
+b.X(); // x private oldugundan ancak referansla ulasabiliriz.
+
+class MyClass : IA, IB
+{
+    int IA.X()
+    {
+        Console.WriteLine("A - X");
+        return 0;
+    }
+
+    int IB.X()
+    {
+        Console.WriteLine("B - X");
+        return 1;
+
+    }
+}
+
+interface IA
+{
+   int X(); 
+}
+
+interface IB
+{
+   int X(); 
+    
+}*/
+
+
+//default implemantation
+
+/*class MyClass : IA
+{
+    public void X()
+    {
+        throw new NotImplementedException();
+    }
+    public void Y()
+    {
+        Console.WriteLine("Y"); // default implemantationu ezer ve burayı basar.
+    }
+}
+
+interface IA
+{
+    void X();
+    void Y() // default implemantation varsa hata ortadan kalkar.
+    {
+        Console.WriteLine("Default implemantation Y");
+    }
+} */
+
+
+
