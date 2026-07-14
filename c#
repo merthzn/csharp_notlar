@@ -1,0 +1,3118 @@
+/* var sayi = 20;
+//var UrunAdi = "Iphone 17 Pro Max";
+var urun_adi = "Iphone 17 Pro Max";
+
+//Degisken isimleri bosluk icermez.
+//Sayi ile baslayamaz.
+
+// var 2sayi = 20;
+
+var sayi2 = 30; 
+
+sayi2=50;
+
+var sayi3 = 60; 
+
+var fiyat = 1000.25;
+var Fiyat = 1000.25; 
+
+//Buyuk-kucuk harf duyarliligi vardir.
+
+var satistaMi = true;
+var ogrenciNo = "1025";
+
+
+Console.WriteLine(sayi);
+Console.WriteLine(urun_adi);
+Console.WriteLine(sayi2);
+Console.WriteLine(sayi3);
+Console.WriteLine(fiyat);
+Console.WriteLine(Fiyat);
+Console.WriteLine(satistaMi);
+Console.WriteLine(ogrenciNo); */
+
+
+
+
+//DEGISKENLER UYGULAMASI
+
+/* var OgrenciAdi = "Mert ";
+var OgrenciSoyadi = "HAZAN";
+var AdSoyad = OgrenciAdi + OgrenciSoyadi;
+var OgrenciNo = "240201441";
+var Cinsiyet = "Erkek";
+var TcKimlik = "13114183002";
+var DogumYili = 2007;
+var AdresBilgisi = "Ankara";
+var OgrenciYasi = 2026 - DogumYili;
+
+Console.WriteLine(OgrenciAdi);
+Console.WriteLine(OgrenciSoyadi);
+Console.WriteLine(AdSoyad);
+Console.WriteLine(OgrenciNo);
+Console.WriteLine(Cinsiyet);
+Console.WriteLine(TcKimlik);
+Console.WriteLine(DogumYili);
+Console.WriteLine(AdresBilgisi);
+Console.WriteLine(OgrenciYasi); */
+
+
+
+
+/* Uygulama 2: Aşağıdaki ürünlerin toplam bilgisini hesaplayınız.
+
+Ürün 1 => 50 TL
+Ürün 2 => 60.5 TL
+Ürün 3 => 356.45 TL 
+*/
+
+/* var urun1_fiyat = 50;
+var urun2_fiyat = 60.5;
+var urun3_fiyat = 356.45;
+var toplam_fiyat = urun1_fiyat + urun2_fiyat + urun3_fiyat;
+Console.WriteLine(toplam_fiyat);  */
+
+
+
+//VERI TIPLERI VE UYGULAMALARI
+
+/* 
+
+int sayi = 200;
+byte sayi2 = 10;
+// byte sayi = 256  byte max 255 alabilir!!!
+
+double kdvOrani = 1.18;  // double default dur.
+float kdv = 1,18f;
+decimal oran = 1.18m;
+
+char cinsiyet = 'E';
+string cinsiyet2 = "Erkek";
+string UrunAdi = "Iphone 17 Pro Max";
+
+bool satisDurumu = true; */
+
+
+
+//Veri Tipi Donusumune Neden Ihtıyac Duyariz?
+/*
+
+Console.Write("1.sayi : ");
+
+var sayi1 = Console.ReadLine();
+
+Console.Write("2.sayi : ");
+
+var sayi2 = Console.ReadLine();
+
+var toplam = sayi1 + sayi2 ; //1020 string olarak toplanirlar.
+Console.WriteLine(toplam); */
+
+
+// Veri Tipi Donusumleri
+
+// implicit casting => bilinçsiz tür dönüşümü
+// explicit casting => bilinçli tür dönüşümü
+
+/* int a = 10;
+long b = a;   // bilinçsiz tür dönüşümü
+
+long d = 20;
+int e = (int) d; //bilinçli tür dönüşümü
+
+double f = 20.5;
+float g = (float)f; //bilinçli tür dönüşümü
+
+double h = 10.5;
+int i = (int)h;  //bilinçli tür dönüşümü 10 olarak tam sayı şeklinde bastırılır.
+
+Console.WriteLine(i);
+
+int x = 10;
+string z = x.ToString(); */
+
+
+
+/*  Console.Write("1.sayi : ");
+
+var sayi1 = Convert.ToInt32(Console.ReadLine());  // string to int
+
+Console.Write("2.sayi : ");
+
+var sayi2 = Convert.ToInt32(Console.ReadLine());
+
+var toplam = sayi1 + sayi2 ; //1020 string olarak toplanirlar.
+Console.WriteLine(toplam);  */
+
+
+//Nullable Types;
+
+//int a ; hata verir çünkü tanımlanmadı
+//Console.WriteLine(a);
+
+//int? maas = null; // ?ekleyince null olabiliyor normalde int null olamaz.
+
+//string isim = null;
+
+//Console.WriteLine(maas); çalışır ama bir şey basmaz.
+
+/* Console.WriteLine(maas.HasValue); // değer ataması yapılıp yapılmadığını bildirir.
+Console.WriteLine(maas.GetValueOrDefault()); */
+
+//ARITMETIK OPERATORLER YOUTUBE
+
+//Iki farklı türde sayısal deger üzerinde yapılan aritmetik işlem neticesinde sonuç büyük olan türde olacak.
+
+/* int s1 = 10;
+double s2 = 5;
+double sonuc = s1+s2 ; */
+
+/* int s1=350;
+byte s2=123;
+int sonuc = s1-s2; */
+
+/* byte s1 = 10;
+byte s2 = 5 ;
+int sonuc = s1 - s2 ; // İSTİSNA!!! Sonuç int döner. */
+
+
+// Karşılaştırma Operatörleri
+//İki sayısal değer arasında büyüklük, küçüklük ve eşitlik durumuna göre karşılaştırma yapan operatörlerdir.
+// < küçüklük
+// > büyüklük
+// <= küçük veya eşitlik
+// >  büyük veya eşitlik
+// == eşitlik
+
+// Karşılaştırma Operatörlerinin Geriye Dönüş Değerleri
+
+//Karşılaştırma operatörleri geriye her daim bool türde bir değer döndürecektir.
+/* int i1 = 123;
+int i2 = 321;
+
+i1 == i2 */
+
+// Mantıksal Operatörler
+//Tüm şartları değerlendirip, kendine göre sonuç döndüren operatörlerdir.
+//ve    &&
+
+// ve && operatörü tümm şartların yerine getirilmesini ister.
+
+//veya  ||
+
+// veya || operatörü şartlardan en az birinin yerine getirilmesini ister.
+
+//ya da  ^
+
+// ya da ^ operatörü , şartlardan sadece bir tanersinin yerine getirilmesini ister.
+
+// Mantıksal Operatorlerin Kullanım Mantığı
+/* bool patetes = true, kofte = false;
+bool sonuc1 = patetes && kofte;
+bool sonuc2 = patetes || kofte;
+bool sonuc3 = patetes ^ kofte;
+
+Console.WriteLine(sonuc1);
+Console.WriteLine(sonuc2);
+Console.WriteLine(sonuc3); */
+
+// Mantıksal Operatorlerin Geriye Dönüş Değeri
+//ve
+
+/* Console.WriteLine(true && true);   //true
+Console.WriteLine(true && false);  //false
+Console.WriteLine(false && false); //false
+Console.WriteLine(false && true);  //false
+
+//veya
+Console.WriteLine(true || true);    //true
+Console.WriteLine(true || false);  //true
+Console.WriteLine(false || false); //false
+Console.WriteLine(false || true); //true
+
+//ya da
+Console.WriteLine(true ^ true);    //false
+Console.WriteLine(true ^ false);  //true
+Console.WriteLine(false ^ false); //false
+Console.WriteLine(false ^ true);  //true */
+
+
+// Arttirma Azaltma Operatorleri
+
+/*Ornek1
+
+// ++
+int i = 5;
+//i++;
+//++i;
+//Console.WriteLine(i);
+Console.WriteLine(i++); // Çıktı : 5 | Bellek : 6 
+Console.WriteLine(++i); // Çıktı : 7 | Bellek : 7
+
+//++i;
+// -- */
+
+/*Ornek 2
+int a = 5;
+int b = a++;
+Console.WriteLine(a);
+Console.WriteLine(b); */
+
+/* Ornek 3
+int i1 = 5;
+int i2 = ++i1;
+int i3 = i1;
+i2 = ++i2;
+Console.WriteLine(i1);
+Console.WriteLine(i2);
+Console.WriteLine(i3); */
+
+
+// Üzerine Ekleme Yığma Operatörleri
+
+// +=  i+=1 ;  => i = i+1
+// -=  i-=1 ;  => i = i-1
+// *=  i*=2 ;  => i = i*2
+// /=  i/=2 ;  => i = i/2
+// %=  i%=2 ;  => i = i%2
+
+
+// Metinsel İfadelerde Operatörler
+
+// + Operatörü
+
+//Metinsel ifadeler + operatörüyle yanyana birleştirilebilirler.
+//int a = 5, b = 3;
+//Console.WriteLine(a + b);
+
+/* string a = "Ahmet ", b = "Mehmet"; //Buradaki işlem metinsel birleştirmedir.
+Console.WriteLine(a + b); */
+
+/* int a = 5;
+string b = "abc";
+
+//Bir türü string e çevirmek için bir string ifade ile + operatörü kullanılarak dönüştürülebilir.
+Console.WriteLine(a+b); */
+
+//+= Operatörü
+
+/* string a = "ahmet";
+string b = "mehmet";
+
+//a = a + b;
+a += b;
+Console.WriteLine(a); */
+
+//== Operatörü
+
+/* string a = "ahmet";
+string b = "mehmet";
+
+bool sonuc = a == b;
+
+//a.Length > b.Length 
+
+bool sonuc2 = a != b;
+Console.WriteLine(sonuc);
+Console.WriteLine(sonuc2); */
+
+
+// ! Operatörü
+
+/* ! -> Degil, olumsuzluk!
+
+Mantisal yapilarda olumsuzluk ifade eder.
+
+true ya da false
+
+!true -> false
+!false -> true  
+
+Console.WriteLine(!true);
+Console.WriteLine(!false); 
+
+int i = 3;
+int i2 = 5;
+Console.WriteLine(i!=i2); */
+
+
+
+// Ternary Operatoru
+
+//Bir deişkene/metoda/property'e değer atarken, eğer ki bu değer şarta göre fark edecekse satır bazlı/tek satırda bu
+//şart kontrolünü yaparak duruma göre değeri döndürmemizi sağlayan bir kalıpsal operatördür.
+
+/* bool medeniHal = true;
+string mesaj = medeniHal == true ? "Evlilere Kampanya..." : "Bekarlara Kampanya...";
+Console.WriteLine(mesaj); */
+
+
+//Ternary Operatöründe Birden Fazla Condition Uygulamak
+/* int yas = 25;
+//Yaşı; 25'den küçük olanlara A, 25 olanlara B ve 25'den büyük olanlara C değerini döndüren ternary operatörünü oluşturalım.
+
+string sonuc = yas < 25 ?  "A" : (yas == 25 ? "B" : "C");
+Console.WriteLine(sonuc); */
+
+
+/* Console.Write("Lutfen sayiyi giriniz : ");
+int sayi = int.Parse(Console.ReadLine()!);
+
+int sonuc = sayi < 3 ? sayi*5 : (sayi>3 && sayi <9 ? sayi*3 :(sayi>9 && sayi%2==0)? sayi *10  : (sayi%2==1? sayi :-1));
+
+Console.WriteLine("Sonuc : " + sonuc); */
+
+
+// Örnek 2
+//Hava durumunu tutan string değişkenin değerine göre aşağıdaki önergeleri uygulayan programı yazınız.
+// "Yağmurlu" => "Şemsiye almalısın"
+// "Güneşli" => "Bol bol d vitamini alman dilegiyle ... "
+// "Kapalı" => "Yağmur yağabilir"
+
+
+/* Console.Write("Lutfen hava durumunu giriniz (Yagmurlu , Gunesli veya Kapali) : ");
+string? havaDurumu = Console.ReadLine();
+
+Console.WriteLine(havaDurumu == "Yagmurlu" ? "Semsiye Alnalisin" : (havaDurumu == "Gunesli" ? "Bol bol d vitamini alman dilegiyle ..." : "Yağmur yağabilir"));*/
+
+
+
+
+//Cast Operatorü
+
+//Genellikle tür dönüşümlerinde kullanılan bir operatördür.
+
+//1. Boxing -> Unboxing
+//object x = 123;
+//int x2 = (int)x;
+
+//2. Bilinçli Tür Dönüşümü
+//int a = 5;
+//short b = (short)a;
+
+//3. Char -> int | int -> Char (ASCII)
+//int ascii = 93;
+//char c = (char)ascii;
+
+//İleride polimorfizm durumunda base class referansıyla işaretlenen bir neneyi kendi türünde de elde edebilmemizi sğalamaktadır.|
+
+
+
+// sizeof Operatorü
+
+//Verilen türün bellekte kaö byte'lık yer kapladığını interger olarak geriye döndürür.
+/* Console.WriteLine("int : "+ sizeof(int));
+Console.WriteLine("long :"+ sizeof(long));
+Console.WriteLine("decimal : "+ sizeof(decimal)); */
+
+
+
+// typeof Operatoru
+
+//typeof operatörü verilen türün/değerin type'inı/türünü getirir.
+//0 tür ile ilgili bilgileri edinmek için kullanılan bir operatörüdür.
+//İleride(ileri düzey programlamada) reflection dediğimiz bir konuda elimizdeki bir türün reflectionına girmek için kullanıldığını göreceğiz.
+/* Type t = typeof(int); //int türüne ait tümm bilgiler burada t değişkenine atanmıştır.
+Console.WriteLine(t.Name);
+Console.WriteLine(t.IsPrimitive);
+Console.WriteLine(t.IsClass);
+Console.WriteLine(t.IsValueType); */
+
+
+// default Operatörü
+
+//Belirtilen türün default değerini döndüren operatördür ...
+//Default değer ne demektir? Default değerler, her tür için yazılım tarafında tanımlanmış bir varsayilan değer demektir.
+//sayisal = 0
+//bool = false
+//string = null
+//char = \0
+//referans = null
+
+/* Console.WriteLine(default(decimal));
+Console.WriteLine(default(string));
+Console.WriteLine(default(Program));
+Console.WriteLine(default(short));
+Console.WriteLine(default(byte)); */
+
+
+
+// is Operatörü
+
+//Boxing'e tabi tutulmuş bir değerin öz türünü öğrenebilmek/check edebilmek/kontrol edebilmek için kullanılan bir operatördür.
+//is operatorü denetleme neticesinde durumu bool yani true ya da false olarak dondürecektir.
+/* object x = true; //Boxing
+Console.WriteLine(x is bool);
+Console.WriteLine(x is int);
+Console.WriteLine(x is Program); */
+
+
+
+ //is null Operatörü
+
+//Bir ddeğişkenin değerinin null olup olmamasını kontrol eden ve sonuç olarka geriye bool türde bir değer döndüren operatördür.
+/* string a = null;
+Console.WriteLine(a is null);
+
+//is null operatörünü sadece null olabilen türlerde kullanabilmekteyiz.
+int b = 123;
+Console.WriteLine(b is null); // null olmadığından burada kullanamam. */
+
+
+// is not null Operatörü
+//Eliizdeki değerin null olup olmamasıyla ilgilenmekte ve geriye bool sonuç döndrmektedir.
+//string a = null;
+//Console.WriteLine(a is not null);
+
+//Sadece null alabilen türlerde kullanialbilir ...
+
+
+// as Operatörü
+
+//Cast operatorunun UnBoxing işlemine alternatif olarka üretilmiş bir operatördür ...
+
+// Cast Örneklendirmesi
+/* object x = "Ahmet";
+int x2 = (int)x;  // program patlar.
+Console.WriteLine(x2); */
+
+// String ile as 
+/* object x = "Ahmet";
+string? y = x as string ;
+Console.WriteLine(y); */
+
+
+// ?(Nullable) Operatörü
+
+//C# prog. dilinde değer tür. değişkenler normal şartlarda null değer alamazlar(Not nullable)
+//Bir değer türlü değişkenin null değer alabilmesi için(yani nullable olabilmesi için) ? operatörünün kullanılması gerekmektedir.
+/* int? a = null;
+//bool? b = null;
+
+Console.WriteLine(a is null);
+
+//Bir değer türü değişken nullable yapıldıysa eğer; is null, is not null, as gibi null ile çalışan operatörlei üzerinde kullanabiliriz.  */
+
+
+// ?? (Null-Coalescing) Operatörü
+
+//Elimizdeki değişkenein değerinin null olma durumuna istinaden farklı bir değeri göndermemizi sağlayan operatördür
+/* string? a = null;
+Console.WriteLine(a ?? "Merhaba"); 
+
+//Console.WriteLine(a ?? 3);
+//Sol ve sağdaki türler birebir aynı olmalıdır. Aksi taktirde derleyici hata verecektir .... */
+
+
+// ??= Operatörü (Null-Coalescing Assignment) (C# 8.0)
+
+/* string? x = null;
+
+Console.WriteLine(x ??= "Merhaba");
+Console.WriteLine(x); */
+
+
+
+
+
+// AKIS KONTROL MEKANIZMALARI - SWITCH CASE  (YOUTUBE)
+
+
+// Switch Case
+//Switch case, kodun akışında belirli bir şarta göre yönlendirme yapmamızı(farklı algoritma çalıştırmamızı/farklı 
+//operasyon gerçekleştirmemizi/tetiklememizi) sağlayan yapılanmadır.
+//Switch case yapılanması sadece bir değişkenin değerini sadece eşitlik durumunları kontrol ederken kullanıalbilir.
+//Sadece esitlik durumu check edilecekse o zaman switch kullanialbilir ..
+
+/* string adi = "Ahmet";
+
+switch (adi)
+{
+    case "Mehmet" :
+        Console.WriteLine("Adi Mehmet");
+        break;
+    
+    case "Sude" :
+        Console.WriteLine("Adi Sude");
+        break;
+
+    case "Mert" :
+        Console.WriteLine("Adi Mert");
+        break;
+
+    case "Ahmet" :
+        Console.WriteLine("Adi Ahmet");
+        break;
+    
+    default :
+       Console.WriteLine("Hicbiri degil...");
+       break;
+}  */
+
+
+// when
+/* int satisTutar = 1000;
+switch (satisTutar)
+{
+    case 1000 when (3 == 5):
+
+    break;
+case 1000 when (3 == 3):
+
+break;
+
+} */
+
+
+// Switch Case'de goto Keyword'ü
+
+/* int i=10;
+switch (i)
+{
+    case 5:
+        Console.WriteLine(i * 10);
+        break;
+    
+    case 6:
+        Console.WriteLine(i / 5);
+        break;
+
+    case 7:
+        goto case 5;
+
+    case 10 :
+        goto case 5;
+} */
+
+
+//Switch Expressions Nedir?
+
+//Eski Yontem 
+/*
+string isim = "";
+int i = 10;
+switch(i)
+{
+    case 5 :
+       isim = "Hilmi";
+       break;
+
+    case 7 :
+       isim = "Rifki";
+       break;
+
+    case 10 :
+       isim = "Sude";
+       break;   
+}
+    Console.WriteLine(isim); */
+
+
+//Yeni Yontem
+
+/* int i = 10;
+string isim = i switch
+{
+    5 => "Hilmi",
+    7 => "Rifki",
+    10 => "Sude",
+    _ => "Bilinmeyen"
+};
+Console.WriteLine(isim); */
+
+
+//Switch Expressions - when Şartı Uygulamak
+/* 
+int i = 10;
+string isim = i switch
+{
+      5 when 3 == 3 => "Hilmi",
+      int x when x == 7 && x % 2 == 1 => "Rifk1",
+      10 => "Gençay",
+      var x => "Hiçbiri" //defamlt : Hiçbirinin olmadığı durumda default tanımlamasına karşılık gelecektir.
+}; */
+
+
+//  Switch Expressions - Tuple Patterns
+
+/* int s1 = 10;
+int s2 = 20;
+string mesaj = "";
+switch(s1,s2)
+{
+    case(5,10):
+        mesaj = "5 ile 10 degerleri";
+        break;
+
+    case(10,20):
+        mesaj = "10 ile 20 degerleri";
+        break;
+}
+Console.WriteLine(mesaj); */
+/*
+int s1 = 10;
+int s2 = 20;
+string mesaj = (s1,s2) switch
+{
+    (5 , 10) => "5 ile 10 degerleri",
+    (10 , 20) => "10 ile 20 degerleri",
+    (_,_) => "Bilinmeyen"
+};
+Console.WriteLine(mesaj); */
+
+
+// Tuple Patterns when Şartı Uygulamak
+/*
+int s1 = 10;
+int s2 = 20;
+string mesaj = (s1,s2) switch
+{
+    (5 , 10) when (true)=> "5 ile 10 degerleri",
+    var x when x.s1%2 == 1 || x.s2 ==10  => "10 ile 20 degerleri",
+    (_,_) => "Bilinmeyen"
+};
+Console.WriteLine(mesaj); */
+
+
+// AKIS KONTROL MEKANIZMALARI - IF YAPISI
+
+/* bool medeniHal = true;
+
+if(medeniHal == true)
+{
+        Console.WriteLine("Allah tek yastikta kocatsin....");
+} */
+
+
+//if yapilanmasi tek bbasina kullaniliyorsa sadece sarta baglı calısacak koda odaklanir...
+
+// If yapilanmasinda illa ki else kullanmak zorunda degiliz.
+
+/* int i = 10;
+if(i == 10)
+{
+    Console.WriteLine("Merhaba");
+}
+Console.WriteLine("Dunya"); // If yapisi true da olsa false da olsa burasi her daim tetiklenecektir.  */
+
+
+/* bool medeniHal = true;
+
+// if(medeniHal == true)
+if(medeniHal) //bool turundeki degiskenlerin degeri zaten bool oldugu icin karsilastirma operatoru kullanmaya gerek yok.
+{
+        Console.WriteLine("Hayirli olsunn....");
+} */
+
+
+
+// IF - ELSE YAPILANMASI
+
+/* 
+int i = 3;
+if(i > 5)
+{
+        Console.WriteLine("i degeri 5 ten bbuyuktur.");
+}
+else
+{
+    Console.WriteLine("i degeri 5 ten kucuktur.");
+} */
+
+/* 
+int i = 10;
+if(i != 10)
+{
+        Console.WriteLine("i degeri 10 degil.");
+}
+else
+{
+    Console.WriteLine("i degeri 10 .");
+} */
+
+/* 
+int i = 10;
+if(i == 10)
+{
+        Console.WriteLine("i degeri 10 .");
+}
+else
+{
+    Console.WriteLine("i degeri 10 degil.");
+}
+Console.WriteLine("Merhaba."); */
+
+
+
+// IF - ELSE IF YAPISI
+
+/*
+int sayi = 30;
+if(sayi > 5 && sayi <= 10)
+{
+    Console.WriteLine(sayi * 5);
+}
+else if(sayi > 10 && sayi <= 20)
+{
+    Console.WriteLine(sayi * 10);
+}
+else if( sayi > 20 && sayi <= 30)
+{
+    Console.WriteLine(sayi * 20); 
+} */
+
+/*
+
+int sayi = int.Parse(Console.ReadLine());
+if(sayi > 100  && sayi <= 200)
+{
+    Console.WriteLine("100 ile 200 arasinda");
+}
+else if(sayi > 200 && sayi <= 300)
+{
+  Console.WriteLine("200 ile 300 arasinda");
+}
+else if( sayi > 200  && sayi <= 400)   // iki araliga da giriyor ancak kod tek bir else if yapisina bakip kodu durduracaktır. Kod burada patlarr!!
+{
+  Console.WriteLine("200 ile 400 arasinda");
+} */
+
+/* 
+int sayi = int.Parse(Console.ReadLine()!);
+if(sayi > 100  && sayi <= 200)
+{
+    Console.WriteLine("100 ile 200 arasinda");
+}
+ if(sayi > 200 && sayi <= 300)
+{
+  Console.WriteLine("200 ile 300 arasinda");  // ayri ayri if blogu olarak kullanirsak kod diger if bloklarina da bakacaktir.
+}
+ if( sayi > 200  && sayi <= 400)
+{
+  Console.WriteLine("200 ile 400 arasinda");
+} */
+
+
+
+// IF - ELSE IF - ... - ELSE YAPISI
+
+/*
+
+int i = 100;
+if(i < 100)
+{
+    Console.WriteLine("100 ' den kucuk");
+}
+else if(i > 100)
+{
+    Console.WriteLine("100 ' den buyuk");
+}
+else
+{
+    Console.WriteLine("100 ' e esit");
+} */
+
+
+// Scope suz if yapisi
+/* 
+if(true)
+{
+    Console.WriteLine("fgsdshuidfhiu");
+}
+
+
+if(true)
+Console.WriteLine("fgsdojhiu");  // if yapilanmasi eger ki tek sdatirlik bir islem gerceklestiriyorsa scope a almaya gerek yoktur. */
+
+
+//IF Yapisi Ornek 1
+
+// Klavyeden iki ürünün fiyatı girildiğinde toplam fiyat 200 TL'den fazla ise, 2.üründen %25 indirim yaparak ödenecek tutarı gösteren
+//uygulamayi yapalm.
+
+
+/* 
+Console.Write("Lutfen 1. urunun fiyatini giriniz : ");
+int fiyat1 = int.Parse(Console.ReadLine()!);
+
+Console.Write("Lutfen 2. urunun fiyatini giriniz : ");
+int fiyat2 = int.Parse(Console.ReadLine()!);
+
+int toplam_fiyat = fiyat1 + fiyat2;
+
+if(toplam_fiyat >=200 )
+{
+        toplam_fiyat = fiyat1 + (fiyat2 * 75 /100);
+        Console.WriteLine("Toplam fiyat :" + toplam_fiyat);
+}
+else
+{
+    Console.WriteLine("Toplam fiyat :" + toplam_fiyat);
+} */
+
+
+// IF Yapisi Ornek 2
+
+//Belirlenen kullanıcı adı ve şifre doğru girildiğinde "Giriş Başarılı", yanlış girildiğinde "Girdiğiniz kullanıcı adı veya şifre
+// hatalı" mesajı veren Console uygulamasını yapalım.
+
+/* 
+Console.Write("Lutfen kullanici adinizi yaziniz: ");
+string? kullanici_adi = Console.ReadLine();
+
+Console.Write("Lutfen sifrenizi yaziniz: ");
+string? kullanici_sifre = Console.ReadLine();
+
+if(kullanici_adi == "Merthzn" && kullanici_sifre == "Mrt12345")
+
+    Console.WriteLine("Giris basarili...");    // scope suz kullanimi
+else
+    Console.WriteLine("Girdiğiniz kullanici adi veya şifre hatali");
+
+
+// Console.WriteLine(kullanici_adi == "Merthzn" && kullanici_sifre == "Mrt12345" ? "Giris basarili..." : "Girdiğiniz kullanici adi veya şifre hatali" );
+//Bu sekilde ternary operatoru ile de tek satirda halledebiliriz. */
+
+
+// IF Yapisi Ornek 3
+
+//Kullanıcıdan alınan iki sayının ve yapılacak işlem türünün (toplama, çıkarma, çarpma, bölme) seçilmesiyle, sonucu hesaplayan programı yazalım.
+/*
+Console.Write("Lutfen 1. sayiyi giriniz: ");
+int sayi1 = int.Parse(Console.ReadLine()!);
+
+Console.Write("Lutfen 2. sayiyi giriniz: ");
+int sayi2 = int.Parse(Console.ReadLine()!);
+
+Console.Write("Lutfen yapilacak islem turunu (+ - * / ) giriniz: ");
+char islem = char.Parse(Console.ReadLine()!); */
+
+// 1 .Yontem
+/*
+if(islem == '+')
+{
+    Console.WriteLine("Sonuc = " + (sayi1+sayi2));
+}
+else if(islem == '-')
+{
+    Console.WriteLine("Sonuc = " + (sayi1-sayi2));
+}
+else if(islem == '*')
+{
+    Console.WriteLine("Sonuc = " + (sayi1*sayi2));
+}
+else if(islem == '/')
+{
+    Console.WriteLine("Sonuc = " + (sayi1/sayi2));
+}
+else
+{
+    Console.WriteLine("Yanlis operator girisi!");
+}  */
+
+
+// 2.Yontem
+/*
+switch(islem)
+{
+    case '+' :
+        Console.WriteLine("Sonuc = " + (sayi1+sayi2));
+        break;
+
+    case '-' :
+        Console.WriteLine("Sonuc = " + (sayi1-sayi2));
+        break;
+
+    case '*' :
+        Console.WriteLine("Sonuc = " + (sayi1*sayi2));
+        break;
+
+    case '/' :
+        Console.WriteLine("Sonuc = " + (sayi1/sayi2));
+        break;
+    
+    default :
+        Console.WriteLine("Yanlis operator girisi!");
+        break;
+       
+} */
+
+
+// 3.Yontem
+/*
+int sonuc = islem switch
+{
+    '+' => sayi1+sayi2,
+    '-' => sayi1-sayi2,
+    '*' => sayi1*sayi2,
+     _ => sayi1/sayi2,
+};
+Console.WriteLine(sonuc); */
+
+// Console.WriteLine(islem == '+' ? sayi1+sayi2 : (islem == '-' ? sayi1-sayi2 : (islem == '/' ? sayi1/sayi2 :sayi1*sayi2)));
+
+// IF Yapisi Ornek 4
+
+//Girilen sayinin degeri 10 degilse ekrana 'sayi yanlis' yazdiralim;
+/* 
+Console.Write("Lutfen bir sayi giriniz : ");
+int sayi = int.Parse(Console.ReadLine()!);
+
+if(sayi != 10)
+  Console.WriteLine("Sayi Yanlis!");
+else
+  Console.WriteLine("Sayi dogru"); */
+
+
+// IF Yapisi Ornek 5
+
+//Girilen sayının negatif ya da pozitif olduğunu gösteren uygulamayı yazalım.
+
+/*
+Console.Write("Lutfen bir sayi giriniz : ");
+int sayi = int.Parse(Console.ReadLine()!);
+string sonuc = "";
+if (sayi < 0)
+//Console.WriteLine("Negatif");
+sonuc = "Negatif";
+else
+//Console.WriteLine("Pozitif");
+sonuc = "Pozitif";
+
+Console.WriteLine(sonuc); */
+
+
+
+// PATTERN MATCHING - TYPE PATTERN
+
+/* 
+object x = "Mert";
+if(x is string a)
+{
+    // string _x = (string)x;
+    Console.WriteLine(a); // burada bos olmadıgı bilindigi icin rahatca bastırabiliriz.
+}
+
+//a = "fdhbdfhhdf1";  // deger verirken sıkıntı yok cunku if in icinde tanimlanmis.
+
+Console.WriteLine(a); // burada manuel olarak bastırmak istediğimizde bos olma ihtimali degerlendiriliyor ve hata veriyor. */
+
+// PATTERN MATCHING - CONSTANT PATTERN
+/* 
+object x = 123;
+int a = 123;
+Console.WriteLine(a is 123); // true ya da false
+
+if(x is 123) // deger bazlı
+{
+    
+}
+if(x is int) // tur bazlı
+{
+    
+} */
+
+
+//Constant Pattern - Kritik
+
+/* 
+//is operatörü bir değişkenin türünü sormamızı/belirlememizi sağlayan bir operatördür. Ve bu operatörün kullanıldığı
+//değişkenleri türü illa bir refrans türlü olma kzorunda değildir.
+//İsterseniz değer türlü değişkenlerd e de is operatörü kullanıalbimektedir. ve hatta primitive türlerde bile kullanılabilmektedir ...
+int a = 5;
+Console.WriteLine(a is int);
+Console.WriteLine(a is string); //Buradkailer ise normal is operatörünün kendi fıtratındaki işlemdir.
+Console.WriteLine(a is bool);
+
+Console.WriteLine(a is 5); //Eğer ki is operatörüyle bir değişkenin değerini == operatörünün sorumluluğuıyla check
+// edişyorsa işte buna constant pattern denmektedir .... */
+
+
+// PATTERN MATCHING - VAR PATTERN
+
+/* Var Pattern - Kritik
+object x = "alsdlasdo";
+if (x is var a)
+{
+} */
+
+/*
+object x = "alsdlasdo";
+var b = "dsffgfd";
+if (x is var a)
+{
+} */
+
+/*var keywordu ile var pattern'de ki var yapilanmasi arasinda davranis farki vardir.
+var keywordu : Derleme zamaninda turunu belirlerken,
+var pattern'da ki var keywordu ise : Runtime'da turunu belirleyecektir.*/
+
+/*
+object x = "Mert";
+if(x is string a)
+{
+    Console.WriteLine(a); 
+}
+
+if(x is var b)
+{
+    
+}
+
+bool result = x is string o1;  
+// type pattern'da x degiskenin degerinin string olmama ihtimalinda o1'in null olma ihtimali soz konusu oldugu icin o
+// kullanilirken hata vermektedir.                
+// Console.WriteLine(o1);       hata verir 
+
+bool result2 = x is var o2;
+//var pattern'da ise x degiskenin degeri ne olursa olsun var ile o2 ye atanacagindan dolayi o2nin null olma ihtimali yoktur ..
+// dolayisiyla o2'yi rahatca kullanabilmekteyiz ...
+Console.WriteLine(o2); */
+
+
+
+// TRY - CATCH YAPILANMASI
+
+/*
+try
+{
+    //Olası çalışma zamanı hatalarını barındıran/verebilecke olan kodları buraya yazıyoruz.
+    Console.Write("Lutfen 1. sayiyi giriniz : ");
+    int sayi1 = int.Parse(Console.ReadLine()!);
+
+    Console.Write("Lutfen 2. sayiyi giriniz : ");
+    int sayi2 = int.Parse(Console.ReadLine()!);
+
+    Console.WriteLine("Toplam : " + (sayi1+sayi2));
+}
+catch
+{
+    //try içerisinde bir hata söz konusu olduğunda catch bloğu tetiklenecektir.
+   //hataya dair; log, kullanıcı bilgilendirme, kontrollü kapanış vs.
+   Console.WriteLine("Lutfen dogru bir ifade giriniz!");
+} */
+
+
+// Maliyetli olduğu için sadece olası hata yapılarını try içine alalım
+
+/* Console.Write("Lutfen 1. sayiyi giriniz : ");
+
+int sayi1=0 , sayi2 = 0;
+try
+{
+    //Olası çalışma zamanı hatalarını barındıran/verebilecke olan kodları buraya yazıyoruz.
+    
+    sayi1 = int.Parse(Console.ReadLine()!);
+
+    Console.Write("Lutfen 2. sayiyi giriniz : ");
+    sayi2 = int.Parse(Console.ReadLine()!);
+
+   
+}
+catch
+{
+    //try içerisinde bir hata söz konusu olduğunda catch bloğu tetiklenecektir.
+   //hataya dair; log, kullanıcı bilgilendirme, kontrollü kapanış vs.
+   Console.WriteLine("Lutfen dogru bir ifade giriniz!");
+}
+
+ Console.WriteLine("Toplam : " + (sayi1+sayi2)); */
+
+
+
+// try - catch Yapılanması - Hata Parametreleri
+
+
+//Çalışma zamanında alınan hataya dair bizlere bilgi veren/taşıyan parametrelerdir ...
+
+//int s1 = 0, s2 = 10;
+//int a = s2 / s1;
+
+//object x = null;
+//x.ToString();
+
+//int.Parse("laöldsöasldö");
+
+/*
+try
+{
+    int s1 = 0, s2 = 10;
+    int a = s2 / s1;
+}
+catch(Exception ex)
+{
+    Console.WriteLine("Mesaj : " + ex.Message);
+} */
+
+
+// Exception Dışında Farklı Bir Tür İle Hata Yakalama
+/*
+try
+{
+    int s1 = 2, s2 = 10;
+    int a = s2 / s1;
+    int.Parse("gdfsyygsdgy");  // bu hatanın mesajı basılmaz.
+}
+catch(DivideByZeroException ex)  //Sadece tanımlanan turdeki hataları yakalar.
+{
+    Console.WriteLine("Mesaj : " + ex.Message);
+} */
+
+
+// Birden Cok Catch Durumu
+/*
+try
+{
+    int s1 = 0, s2 = 10;
+    int a = s2 / s1;
+    int.Parse("gdfsyygsdgy");  
+}
+catch(DivideByZeroException ex)  // Bu hata  alındıgında bu hatayı karsılayacak olan catch blogu
+{
+    Console.WriteLine("Mesaj : " + ex.Message); 
+}
+catch(FormatException ex) // FormatException hatası alındıgında onu karsılayack catch blogu
+{
+    Console.WriteLine("Mesaj : " + ex.Message);
+}
+catch(Exception ex) // blokların en sonuna exception turunde bir catch tanımlanırsa kesinlikle burası karsılar.
+{
+    
+} */
+
+
+//finally Bloğu
+
+//finally bloğu, try catch yapılanmasında hata alınsada alınmasada her iki durumda da tetiklenmesi/çalıştırılması gerken kodları yazxdığımız bloktur.
+
+/* try
+{
+    //hata verebilecek kodlar buraya
+    Console.WriteLine("try");
+}
+catch
+{
+    //her iki durumda da çalışmasını istediğimiz kodlar buraya
+    Console.WriteLine("catch");
+
+}
+finally
+{
+    //hata aındıktan sonra yapılacak işlemler buraya
+    Console.WriteLine("finally");
+} */
+
+
+// TRY CATCH YAPISINDA WHEN KULLANIMI
+/* string x = "a";
+try
+{
+    int s1 = 0, s2 = 10;
+    int a = s2 / s1;
+}
+catch(DivideByZeroException ex)  when(x == "b") // eger when in icibdeki false olursa catch yapısı kesinlikle tetiklenmez
+{
+    Console.WriteLine("Mesaj : " + ex.Message); 
+} */
+
+
+// DONGULER
+
+//For Dongusu
+
+/*
+for(int i = 0; i < 10 ; i++)
+{
+    Console.WriteLine("Mert HAZAN");
+} */
+
+
+/* for(int i = 10; i > 0 ; i--)
+{
+    Console.WriteLine("Mert HAZAN");
+} */
+
+// 1 den 10 a kadar olan sayıları basma
+
+/*for(int i=1 ; i<10 ; i++)
+{
+    Console.WriteLine(i);
+} */
+
+// 1 ile 40 (40 dahil) arasındaki çift sayilari toplayarak sonuc bastır;
+/*
+int toplam=0;
+for(int i =0;i<=40;i+=2)
+{
+    toplam+=i;
+}
+Console.WriteLine(toplam); */
+
+// ya da
+
+/* int toplam=0;
+for(int i =1;i<=40;i++)
+{
+    if(i%2 == 0)
+    {
+        toplam+=i;
+    }
+}
+Console.WriteLine("Toplam : " + toplam); */
+
+
+//Klavyeden girilen sayinin faktoryelini bulan program
+
+/* Console.Write("Lutfen bir sayi giriniz : ");
+int sayi = int.Parse(Console.ReadLine()!);
+int fact = 1;
+
+for(int i = 1 ; i <= sayi ; i++)
+{
+    fact*=i;
+}
+Console.WriteLine("Faktoryel : " + fact); */
+
+// ya da
+
+/* Console.Write("Lutfen bir sayi giriniz : ");
+int sayi = int.Parse(Console.ReadLine()!);
+int fact = 1;
+string sonuc = "";
+for(int i = sayi ; i >= 1 ; i--)
+{
+    fact*=i;
+    sonuc += i +(i==1 ? " = " : " x ");
+}
+Console.WriteLine("Faktoryel : " + sonuc + fact); */
+
+
+//WHILE DONGUSU
+
+// While ile Ekrana 10 kere Merhaba Dunya yazdırma
+
+/* int i = 1;
+while(i<=10)
+{
+    Console.WriteLine("Merhaba Dunya!");
+    i++;
+} */
+
+//Klavyeden girilen sayidan geriye dogru 0 a kadar sayan bir sayac hazırla
+
+/* Console.Write("Lutfen bir sayi giriniz : ");
+int sayi = int.Parse(Console.ReadLine()!);
+while(sayi>=0)
+{
+    Console.WriteLine(sayi);
+    sayi--;
+} */
+
+// While ile 0 ile 100 arasindaki tek sayiları toplayarak sonucu ekranda gosteren programi yapalim.
+
+/* int i = 0;
+int toplam = 0;
+while(i<=100)
+{
+    if(i%2 == 1)
+    toplam+=i;
+    i++;
+}
+Console.WriteLine("Toplam : " + toplam); */
+
+// While ile klavyeden girilen sayinin faktoryelini bulma
+
+/* Console.Write("Lutfen bir sayi giriniz : ");
+int sayi = int.Parse(Console.ReadLine()!);
+
+int fact=1;
+while(sayi > 0)
+{
+    fact*=sayi;
+    sayi--;
+}
+Console.WriteLine("Faktoryel = " + fact); */
+
+
+//O  anki tarihin saniye degeri 5'in katıysa eger tarihi ekranda gosteren uygulamayı while ile yap
+
+/* while(true)
+{
+    if(DateTime.Now.Second %5 == 0)
+    Console.WriteLine(DateTime.Now);
+} */
+
+
+//DO-WHILE DONGUSU
+
+/* while(false)
+{
+    Console.WriteLine("While Dongusu");
+}
+
+do
+{
+    Console.WriteLine("Do While Dongusu");
+}while(false); */
+
+//Scope suz Donguler
+
+/* for(int i = 0;i<10;i++)
+Console.WriteLine("Mert HAZAN");
+
+while(true)
+Console.WriteLine("Mert HAZAN");
+
+do
+Console.WriteLine("Mert HAZAN");
+while(true); */
+
+
+//Sonsuz Dongu
+
+/* for(;true ;)
+{
+    
+} */
+
+/* bool dongu = true;
+
+for(;dongu ;)
+{
+    if(true)
+    {
+        dongu = !dongu;
+    }
+} */
+
+
+/* bool durum = false;
+while(!durum)
+{
+    if(true)
+    {
+        durum = !durum;
+    }
+} */
+
+/* bool durum = true;
+do
+{
+    if(true)
+    {
+        durum = !durum;
+    }
+}while(durum); */
+
+
+// Ic Ice Donguler
+
+ /* for(int i = 0; i< 10 ; i++)
+{
+    for(int j = 0 ; j < 5 ; j++)
+    {
+        Console.WriteLine(i*j);
+    }
+} */
+
+
+/* 
+for(int i = 0; i < 10 ; i++)
+{
+    for(int j = 0 ; j < 5 ; j++)
+    {
+        for(int o = 0 ; o < 3 ; o++)
+        {
+            Console.WriteLine(i*j*o);
+        }
+    }
+} */
+
+
+
+
+//BREAK KOMUTU
+
+//sadece dongu ve switch case de kullanılır.
+
+/* while (true)
+{
+    break;
+}
+
+for (int i= 0; i < 10; i++)
+{
+    break;
+}
+
+do
+{
+   break;
+} while (true);
+
+foreach (var item in new[] { "" })
+{ 
+  break;
+} */
+
+
+ /* while (true)
+{
+    if(DateTime.Now.Second == 25)
+      break;
+    Console.WriteLine(DateTime.Now);
+} */
+
+
+//Kullanıcıdan 't' harfi girene kadar alınan sınırsız sayıda sayıyı toplayan ve sonucu ekrana yazdıran uygulamayı yazalım.
+
+/* int toplam = 0;
+while(true)
+{
+    Console.Write("Lutfen bir sayi giriniz : ");
+    string? girilenDeger = Console.ReadLine();
+    if(girilenDeger == "t")
+    {
+        Console.WriteLine("Toplam sonuc : " + toplam);
+        break;
+    }
+    else
+    {
+        toplam += int.Parse(girilenDeger!);
+    }
+
+} */
+
+
+//Kullanıcıdan alınan sonsuz adet sayı değerlerinden 37'nin katı girildiğinde sonlanan uygulamayı yazalım.
+
+/* while(true)
+{
+    Console.Write("Lutfen bir sayi giriniz : ");
+    int sayi = int.Parse(Console.ReadLine()!);
+    if(sayi % 37 == 0)
+    {
+        Console.WriteLine("Uygulama Sonlanmistirr...");
+        break;
+    }
+} */
+
+
+// Manevratik Komutlar - Continue Komutu Nedir? 
+//Sadece ve sadece dongulerde kullanılır.
+
+/*for(int i=0 ; i<10 ; i++)
+{
+    
+    if(i%2 == 0)
+    continue;
+    Console.WriteLine(i);
+} */
+
+//Kullanıcının girdiği sonsuz adet sayıdan pozitif olanlarını çarpan ve 't'(enter) yapıldığında sonucu ekrana yazdıran kodu yazalım.
+
+/* int carpim = 1;
+while(true)
+{
+    Console.Write("Lutfen bir sayi giriniz : ");
+    string? girilen_deger = Console.ReadLine();
+    if(girilen_deger == "t")
+    {
+        Console.WriteLine(carpim);
+        break;
+    }
+    else
+    {
+        int sayi = int.Parse(girilen_deger!);
+        if(sayi <0)
+        continue;
+        carpim*=sayi;
+    }
+} */
+
+
+//1 ile 1000 arasında 7'nin katı olmayan sayıları ekrana yazdıralım
+
+/* for(int i = 1 ;  i <= 1000 ;i++)
+{
+    if(i%7 == 0)
+    continue;
+    Console.WriteLine(i);
+} */
+
+
+// Manevratik Komutlar - Return Komutu
+
+//Kullanıcı 'c' tuşuna basana kadar sonsuz döngüde dönen uygulamayı yazınız.
+
+/* while(true)
+{
+  if(Console.ReadKey().KeyChar == 'c')
+    {
+            Console.WriteLine("Uygulama sona ermistir.");
+            return;
+    } 
+    else
+    {
+        Console.WriteLine("Uygulama caisiyor.");
+    }
+} */
+
+
+
+
+// DIZILER - ARRAY 
+
+//Tek bir değişken altında birden fazla "aynı türde" değeri toplamamızı sağlayan veri kümelerine dizi denmektedir.
+
+//int[] yaslar = new int[7]; 
+
+/*Dizi tanimlama surecinde eleman sayisi mecburi girilmek zorundadir. Yani dizide calisacak deger adedi basta
+bildirilmelidir .... Bu durum bir sinirliliktir.*/
+
+//Bir dizi tanimlkamasi yapildigi an bellekte o diziyi kullansakta kullanmasakta verilen eleman sayisi kadar alan tahsisinde bulunulur .
+
+//Dizilerde tanimlama yapildigi an alan tahsisinde bulunulmasi bizim icin pekte dogru bir durum degildir.
+
+//Kullanilmadigi halde diziler direkt olarak bellekten belirltilen elaman sayisi kadar alan tahsisinde bulunmasi bir sinirliliktir.
+
+//Diziler alan tahsisi yapildiginda ilgili alanlara turune uygun default degerleri atarlar.
+
+//Index numarasi dizilere sistem tarafindan otomatik verilen ve kimlik mahiyetinde kullanabilecvegimiz bir numaradir.
+
+/* Her bir elemana karsilik gelen unique degerlerdir. Haliyle boyle olmasi demek 
+her bir elemana istedigimiz zaman erisip, deger atama yapabilmemizi yahut var olan degeri okuyabilmemizi saglamaktadir.*/
+/*
+
+yaslar[3] = 10;
+yaslar[2] = 5;
+yaslar[0] = 5;
+yaslar[5] = 123;
+*/
+
+//Diziye deger koyarken hangi index'e karşilik deger koyacaksa yine indexer operatoruyle bunu bildirmeli ve ilgili degeri atamalyiz ...
+
+//Dizinin icerisinde lemanlara deger atarken degisken davranisi gosteririr. Dolayisiyla herhgangi bir elemana atanan ennn sonuncu deger gecerlidir.
+
+//Dizilerde eleman sayısının başta belirlenmesi durumunda, ihtiyaca-binaen daha fazla değer atamak
+//istediğimizde bu değerleri atayamacağımızdan ve dizinin aralığını genişletemeyeceğimizden dolayı bu durum bir sınırlılık olarak karşımıza çıkmaktadır.
+
+/* int[] yaslar = new int[7]; 
+yaslar[3] = 10;
+yaslar[2] = 5;
+yaslar[0] = 5;
+yaslar[5] = 123;
+
+Console.WriteLine(yaslar[3]);
+Console.WriteLine(yaslar[6]); */
+
+
+// Tanımlanmış Dizi İçerisinde Döngüyle Dönme
+
+/* string[] personeller = new string[13]; //burası da degisecek
+personeller[0] = "Hilmi";
+personeller[1] = "Huseyin";
+personeller[2] = "Rifki";
+personeller[3] = "Suayip";
+personeller[4] = "Muiddin";
+personeller[5] = "Naci";
+personeller[6] = "Husnu";
+personeller[7] = "Nurullah";
+personeller[8] = "Cabbar";
+personeller[9] = "Akif";
+personeller[10] = "Asude";
+personeller[11] = "Sumeyye";
+personeller[12] = "Mert"; */
+
+
+/* for(int i = 0 ; i < 10 ; i++)
+{
+    Console.WriteLine(personeller[i]);
+} */
+
+/* int i = 0;
+do
+{
+    Console.WriteLine(personeller[i++]);
+}while(i<10); */
+
+/* for(int i = 0 ; i < personeller.Length; i++) // kodu tekrar tekrar düzenlemeye gerk yok.
+{
+    Console.WriteLine(personeller[i]);
+} */
+
+
+// Dizi Tanımlama Varyasyonları
+
+// 2. Varyasyon
+/*int[] yaslar2 = { 30, 25, 41, 52 };
+string[] isimler = { "Rıfkı", "Şuayip", "Hüseyin", "Hilmi", "Mehmet" };*/
+
+// 3. Varyasyon
+//string[] isimler2 = new string[] { "Rifki", "Şuayip", "Hüseyin", "Hilmi", "Mehmet" }; // kac tane girersem o kadar alan verir.
+
+// 4. Varyasyon
+//string[] isimler3 = new string[3] { "pkasmdkmasd", "ksmdfkmsdfk", "kmkasmkdm"}; 3 tane alan tahsis eder.
+
+// 5. Varyasyon
+//int[] sayilar = new[] { 3, 5,7};
+//var sayilar2 = new[] { "3", "4", "2", "7", "lkasmdkmasd" };
+
+
+
+//Array Sınıfı
+
+//Dizi olarak tanımlanan degiskenler Array sınıfından turetilmektedir.
+//Dolayısıyla dizlerde Array sınıfından gelen belirli metotlar ve ozellikler mevcuttur.
+
+//Array yaslar = new int[3];
+
+//int[] a = new int[5] ; 
+/* Dizi eger ki kendi turunde referans ediliyorsa indexer operatoru kullanabilir ....
+Bu sekilde calisildiginda ilgili diziye verisel mudahalaler operatif gerceklesitrilirken
+Genellikle bu format algoritalarda tercih edilir. Cunku indexer algoritmalarda cok kullanilir. */
+
+//Array a2 = new int[5];
+/* Yok eger Array turunde referans ediliyorsa indexer op. kullanilamaz! Bu sekilde ise fonksiyonel cozumler getirilmektedir.
+Genellikle elimizdeki dizinin uzerinde islem yaparken tercih edilen formattir. Dizi hakkinda bilgi edinirken vs. kullanilir ... */
+
+//Array dizi = new int[3];
+//1.Yontem
+
+/* int[] dizi = new int[3];
+dizi[0]=30;
+dizi[1]=40;
+dizi[2]=50;
+Array dizi2 = dizi; */
+
+
+//2.Yontem
+
+// Array dizi = new int[] { 3 , 5 , 7 , 9 };
+// Array dizi = new int[4] { 3 , 5 , 7 , 9 };
+//Array dizi = new[]  { 3 , 5 , 7 , 9 };
+// Array dizi =  { 3 , 5 , 7 , 9 }; //KULLANILAMAZ!!!
+
+
+//3.Yontem
+
+/* Array dizi = new int[3];
+dizi.SetValue(30,0);
+dizi.SetValue(40,1);
+dizi.SetValue(50,2);
+
+object? value = dizi.GetValue(1);
+Console.WriteLine(value); */
+
+
+//Array Sınıfı Clear Metodu
+
+//Array isimler = new[] { "Hilmi", "Hüseyin", "Şuayip", "Rifki", "Hamdullah" };
+
+//Dizi içerisindeki tüm elemanları siliyor diye bilinir. Halbuki bu aynlıştır. Dizi içerisindeki tüm
+// elemanlara, dizinin türüne uygun default değerleri atayan bir fonksiyondur.
+
+/*for(int i = 0 ; i < isimler.Length ; i++)
+{
+    Console.WriteLine(isimler.GetValue(i));
+}
+
+Array.Clear(isimler, 0, isimler. Length);
+Console.WriteLine("***************");
+for(int i = 0 ; i < isimler.Length ; i++)
+{
+    Console.WriteLine(isimler.GetValue(i));
+}*/
+
+// Array Sınıfı Copy Metodu
+
+//Elimizdeki bir dizinin elemanlarini baska bir diziye kopyalamamizi saglayan bir fonksiyondur
+
+/* Array isimler = new[] { "Hilmi", "Hüseyin", "Şuayip", "Rifki", "Hamdullah" };
+string[] isimler2 = new string[isimler.Length];
+Array.Copy(isimler,isimler2,5);
+
+for(int i = 0 ; i < isimler.Length ; i++)
+{
+    Console.WriteLine(isimler2.GetValue(i));
+} */
+
+
+//Array Sınıfı IndexOf Metodu
+
+//Array isimler = new[] { "Hilmi", "Hüseyin", "Şuayip", "Rifki", "Hamdullah" };
+
+//Dizi içerisinde bir elemanın var olup olmadığını sorgulayabildiğimiz fonksiyondur.
+//Arama neticesinde ilgili değer varsa int olarak o değerin index numarasını döndürecektir.
+//yoksa -1 değerini döndürür.
+
+/*int index = Array. IndexOf(isimler, "Rifki");
+if (index != -1)
+{
+   Console.WriteLine("Vardir");
+}*/
+
+
+
+//Array Sınıfı Reverse Metodu
+
+/* Array isimler = new[] { "Hilmi", "Hüseyin", "Şuayip", "Rifki", "Hamdullah" };
+
+for(int i = 0 ; i < isimler.Length ; i++)
+{
+    Console.WriteLine(isimler.GetValue(i));
+}
+
+Array.Reverse(isimler);
+Console.WriteLine("***********");
+
+for(int i = 0 ; i < isimler.Length ; i++)
+{
+    Console.WriteLine(isimler.GetValue(i));
+} */
+
+
+
+//Array Sınıfı Sort Metodu
+
+/* Array isimler = new[] { "Hilmi", "Hüseyin", "Şuayip", "Rifki", "Hamdullah" };
+
+for(int i = 0 ; i < isimler.Length ; i++)
+{
+    Console.WriteLine(isimler.GetValue(i));
+}
+
+Array.Sort(isimler);
+Console.WriteLine("***********");
+
+for(int i = 0 ; i < isimler.Length ; i++)
+{
+    Console.WriteLine(isimler.GetValue(i));
+} */
+
+//Array Sınıfı IsReadOnly Propertysi
+//Bir dizinin sadece okunabilir olup olmadığını bool türde bildiren bir özelliktir.
+
+ 
+/* Array isimler = new[] { "Hilmi", "Hüseyin", "Şuayip", "Rifki", "Hamdullah" };
+Console.WriteLine(isimler.IsReadOnly); */
+
+// Array Sınıfı IsFixedSize Propertysi
+//Bir veri kümesinin eleman sayısının sabit olup olmama durumunu IsFixedSize ile öğrenebiliriz.
+
+/* Array isimler = new[] { "Hilmi", "Hüseyin", "Şuayip", "Rifki", "Hamdullah" };
+Console.WriteLine(isimler.IsFixedSize); */
+
+//Array Sınıfı Length Propertysi
+/* Array isimler = new[] { "Hilmi", "Hüseyin", "Şuayip", "Rifki", "Hamdullah" };
+Console.WriteLine(isimler.Length); */
+
+//Array Sınıfı Rank Propertysi
+/* Array isimler = new[] { "Hilmi", "Hüseyin", "Şuayip", "Rifki", "Hamdullah" };
+Console.WriteLine(isimler.Rank);
+int[,,] x = new int[3,4,5];
+Console.WriteLine(x.Rank); */
+
+
+// Array Sınıfı - CreateInstance Metodu İle Dizi Tanımlama
+
+/* nt[] yaslar = new int[3];
+//Normalde yukarıdaki gibi yapılan dizi tanımlaması esasında arkaplanda Array sınıfının CreateInstance metodfunu kullanmaktadır. Bizlerde bu metodu
+//kullanarak fonksiyonel diziler oluşturabilmekteyiz.
+Array yaslar2 =Array.CreateInstance(typeof(int), 3); */
+
+//Array Sınıfı - CreateInstance Metodu İle Çok Boyutlu Dizi Tanımlama
+
+/* Array yaslar2 =Array.CreateInstance(typeof(int), 3 ,4 , 5 , 6);
+Console.WriteLine(yaslar2.Rank); */
+
+
+//Ranges and Indices - System.Index Türü İnceleme
+
+/* int[] sayilar = { 3, 5, 7, 9, 1, 2, 31, 321, 534, 5643, 457, 56, 78 };
+
+//Index index = 5;
+Index index = ^8;
+Console.WriteLine(sayilar[index]); */
+
+
+
+//COK BOYUTLU DIZILER
+
+//Cok boyutlu diziler oyun programlamada yahut yüksek istatiksel çalışmalarda kullanılan bir yapıdır.
+//int[] sayilar = new int[3];
+
+//int[,] sayilar = new int[3,5];
+
+//2Boyutludan Fazla Dizi Tanımalaması
+//
+// int[,,,] sayilar2 = new int[3,4,5,6];
+
+// Tanımlanmış Çok Boyutlu Diziye Değer Atama
+
+/* int[,] sayilar = new int[3,4];
+sayilar[1,2]= 5;
+sayilar[2,0]= 5; */
+
+// Ornek 
+/* int[,,,] sayilar = new int[2, 3, 4, 5];
+sayilar[0, 0, 0, 0] = 15;
+sayilar[0, 0, 0, 1] = 16;
+sayilar[0, 0, 0, 2] = 17;
+sayilar[0, 0, 0, 3] = 18;
+sayilar[0, 0, 0, 4] = 119;
+sayilar[1, 0, 0, 0] = 119; */
+
+// Ornek 
+
+/*int[,,] sayilar = new int[2, 3, 4];
+sayilar[0, 0, 1] = 15; */
+
+// Varyasyonla Değer Atama
+/*int[,] sayilar = {
+{ 3,5,7},
+{ 5,6,7},
+{ 15, 36, 57 },
+{ 25, 46, 67 }
+
+}; */
+
+/* int[,,,] sayilar2 =
+{
+    {
+        {
+            {0,1,2}
+        }
+    },
+
+     {
+        {
+            {10,21,32}
+        }
+    },
+
+     {
+        {
+            {20,31,42}
+        }
+    },
+
+}; */
+
+
+//  Çok Boyutlu Dizilerden Değer Okuma
+
+/* int[,] sayilar = new int[4, 3];
+sayilar[0, 0] = 3;
+sayilar[0, 1] = 5;
+sayilar[0, 2] = 7;
+sayilar[1, 0] = 5;
+sayilar[1, 1] = 6;
+sayilar[1, 2] = 7;
+sayilar[3, 2] = 67;
+
+Console.WriteLine(sayilar[3, 2]);
+Console.WriteLine(sayilar[0, 0]);
+Console.WriteLine(sayilar.Length); 
+Console.WriteLine(sayilar.GetLength(0));
+Console.WriteLine(sayilar.GetLength(1)); */
+
+
+//Çok Boyutlu Dizilerdeki Verileri İç İçe Döngülerle Ekrana Yazdırma
+
+/* int[,,] sayilar = new int[2, 2, 4];
+sayilar[0, 0, 0] = 1;
+sayilar[0, 0, 1] = 2;
+sayilar[0, 0, 2] = 3;
+sayilar[0, 0, 3] = 4;
+sayilar[0, 1, 0] = 5;
+sayilar[0, 1, 1] = 6;
+sayilar[0, 1, 2] = 7;
+sayilar[0, 1, 3] = 8;
+sayilar[1, 0, 0] = 9;
+sayilar[1, 0, 1] = 10;
+sayilar[1, 0, 2] = 11;
+sayilar[1, 0, 3] = 12;
+sayilar[1, 1, 0] = 13;
+sayilar[1, 1, 1] = 14;
+sayilar[1, 1, 2] = 15;
+sayilar[1, 1, 3] = 16;
+
+for(int i=0; i < sayilar.GetLength(0) ; i++)
+{
+    for(int j=0; j < sayilar.GetLength(1) ; j++)
+{
+    for(int k=0; k < sayilar.GetLength(2) ; k++)
+{
+    Console.Write(sayilar[i ,j , k] + "     ");
+}   
+Console.WriteLine("");
+}
+} */
+
+
+
+// STRING TIPI ANALIZI VE STRING FONKSIYONLARI
+
+// Null - Empty Durumları, Farkları
+
+//
+//  Null
+//Bir değişken/nullable/referans eğer ki null alıyorsa bu durum ilgili değişkenin herhangi bir alanı tahsis etmediği anlamına gelir.
+//Arsa yok!
+//Deger turlu degiskenler null alamazlar!
+//Null alabilen turler sadece referans turlerdır.
+//Deger turlu degıskenlerın null alabilmesi icin nullable(?) olmaları gerekmektedir.
+
+// int? a =null;
+// string b = null;
+
+//Null olan bir deger uzerinde islem yapmaya calıstıgımızda run time hatası meydana gelir.
+
+// Empty
+
+//Bir değişken/nullable/referans eğer ki empty ise bu değişkenin değeri yok anlamına gelir. Lakin alan tahsisinde bulunulmuştur.
+//ARsa var lakin ev yok!
+//Tumm degerlere empty atanabilir;
+//Alan tahsisinde bulunduktan sonra ilgili alana bir deger koymak empty durumudur.
+//Default degerlerin oldugu durumlar empty olarak gecer.
+
+// int a = 0;
+// bool b = false;
+// int[] x = new int[55];
+
+//Empty dendiginde aklimiza string e "" degerinin verilmesi gelsin yeter;
+
+// string a = "";
+// string b = null ;
+
+// string a2 = string.Empty;
+//Empty olan bir deger uzerinde islem gerceklestirilebilir.
+
+
+// String İfadelerde IsNullOrEmpty Kontrolü
+
+// IsNullorEmpty
+//Elimizdeki string ifadelerin işleme tabi tutulamadan önce kesinlikle kontrol edilmesi gerekmektedir.
+
+/* string x = ""; //Empty
+//string x= string.Empty; //Empty
+
+//if (x != "")
+//if (x != string.Empty && x != null)
+if (x != string.Empty && x is not null)
+{
+//Operasyon ...
+}
+
+
+//IsNullorEmpty fonksiyonu; elimizdeki string ifadenin null yahut empty olup olmama durumları hakkinda bir check yapar ve geriye bool türde sonuç döner.
+//Eğer ki değer null ya da empty ise geriye true değilse false dönecektir.
+if (!string.IsNullOrEmpty(x))
+{
+//Operasyon ...
+} */
+
+
+//String İfadelerde IsNullOrWhiteSpace Kontrolü
+
+//IsNullOrWhiteSpace fonksiyonu : Elimizdkei string ifadenin null, empty yahut boşluk karakterlerinden ibaret olma durumunda geriye bool true değerini
+//döndüren bir fdonksiyondur.
+
+/* string x = "    ";
+if(string.IsNullOrWhiteSpace(x))
+{
+    Console.WriteLine("Ifade ya null ya empty ya da white space dikkatli bak.");
+} */
+
+
+//String Özünde Bir char Dizisidir!
+
+//String - char Dizisi
+/*string ifadeler esasında bir char dizisidir. Yani yazılım açısından string ifade yoktur! Esasında karakterlerin bir araya gelmis hali vardır.
+Dolayısıyla karakterleri bir araya getirebilecek yegane şey bir dizidir. String ifadeler yazılımsal açıdan bilgisyarda bir char dizisi olarak tarif
+edilmekte ve o şekilde tutulmaktadırlar. */
+//String ifadeler özünde bir char dizisi/yani dizi olmasından dolayı referans türlü değişkenlerdir. Çünkü diziler referans türlüdürler. yani
+//nesnedirler.yani heapte tutulurlar.
+
+// string metin = "sebepsiz boş yere ayrılacaksan ... ";
+
+//string ifadeler char dizisi olduklarından dolayı yapısal olarak her bir karakter baştan sona otomatik indexlenmektedir. Dolayısıyla string bir ifade
+//üzerinde bizler indexer operatörünüde kullanabilmekteyiz ...
+
+
+/* Console.WriteLine(metin[3]);
+Console.WriteLine(metin.Length);
+Console.WriteLine(metin.Rank); //Bu olaayı yapamıyoruzz!!!   */
+
+
+// Array array = metin; 
+// string ozunde bir char dizisi olabilir amma velakin yapısal olarak yine de string oldugu icin Array referansına atılamaz,
+//Array ile Karşılannamaz!!!
+
+
+// Döngülerle String Metin İçerisindeki Her Bir Karaktere Ulaşma
+
+//string metin = "sebepsiz boş yere ayrilacaksan ... ";
+
+/* for(int i=0;i<metin.Length;i++)
+{
+    if(metin[i]=='e')
+    {
+        Console.WriteLine(i);
+    }
+} */
+
+/* int i = 0;
+do
+{
+     if(metin[i]=='e')
+    {
+        Console.WriteLine(i);
+    }
+    i++;
+    
+}while(i<metin.Length); */
+
+
+
+//String İfadelerde + Operatörü Kullanımı
+
+//String ifadelerde + operatoru kullanılabilmektedir.Ikı string ifade arasında birlesitrme gorevi gorur.
+// string a ="merhaba" ,  b = "Dunya";
+// Console.WriteLine(a + b);
+
+//Bir string ifade ile herhangi bir tur + operatoru ile isleme tabii tutulabilir.
+// + operatoru string bir ifadeyle herhangi bir turdeki ifadeleri isleme tabii tutarken object + string olarak davranıs sergileyecek
+// ve sonuc olarak geriye string deger dondurecektir.
+//Dolayısıyla herhangi bbir ifadeyi string e donusturebilmek ıcın o ifadeyi + "" ile işleme tutmak yeterli olacaktır.
+
+//Console.WriteLine(5+7+20 + "Ahmet");
+
+
+//String Formatlandırma
+
+
+/*string isim = "Gençay", soyisim = "Yildiz", tcNo = "12345678910";
+int yas = 28;
+bool medeniHal = true; */
+
+//Console.WriteLine("TC No : .......... olan ....... .......  sahsin bilgileri | Yaş : ...... | Medeni Hal : ...... ");
+
+// + operatoru ile
+
+//Console.WriteLine("TC No : " + tcNo + " olan " + isim + " " +soyisim + " sahsin bilgileri | Yaş : " +yas+ " | Medeni Hal : " + (medeniHal ? "Evli" : "Bekar"));
+
+//String Değeri string.Format Metodu İle Formatlandırma
+
+/* string sonuc=string.Format("TC No : {0} olan {1} {2}  sahsin bilgileri | Yaş : {3} | Medeni Hal : {4} ",tcNo,isim,soyisim,yas,medeniHal ? "Evli" : "Bekar");
+Console.WriteLine(sonuc); */
+
+
+//String Değeri $(String Interpolation) Operatörü İle Formatlandırma
+
+//Console.WriteLine($"TC No : {tcNo} olan {isim} {soyisim}  sahsin bilgileri | Yaş : {yas} | Medeni Hal : {(medeniHal ? "Evli" : "Bekar")} ");
+
+
+
+// String Değerlerde (Escape)Kaçış Karakterleri
+
+/* Console.WriteLine("\"Bugun Hava Cok Guzel\"");
+Console.WriteLine("Mert\\Hazan");
+Console.WriteLine("\a");
+Console.WriteLine("abc\b");
+Console.WriteLine("Isim\tSoyisim\tAdres\t");
+char c = '\'';
+Console.WriteLine(c); */
+
+
+// @(Verbatim Strings) Operatörü
+
+// 1. Kullanım
+//Bir değişken yahut metot vs. gibi yapılanma isimlerinin programatik bir keyworde karşılık gelmesi mümkün değildir. Derleyici hatası verilir.
+//Eğer ki illa ben bir keyword ismi kullanacam diyorsan eğer @ kullanabilirsin.
+/* int @void = 5;
+int @class = 5;
+int @namespace = 5; */
+
+// 3. Kullanım
+/* string metin = "mas1dmkasm
+dkasmdkm
+aksmdkasmdkmaskdm";   // kullanamayizz!
+
+string metin2 = @"masldmkasm
+dkasmdkm
+aksmdkasmdkmaskdm";
+
+string metin3 = "kamsdkamsdkmasd" +
+"kamsdkmaskdmasd" +
+"alksmödlaösmd" +
+"asldkmaksdm" +
+"asdasd"; */
+
+
+// String Interpolation İle Verbatim Strings Birlikteliği (C# 8.0)
+
+/* string isim = "Gençay", soyisim = "Yildiz", siparisNo = "123123";
+int fiyat = 150;
+
+string mailMessage = @$"Merhaba {isim} {soyisim}\n
+{siparisNo} nolu sipariş talebiniz tarafimizca alinmistilar.\n
+Fiyat : {fiyat} "; */
+
+
+//STRING FONSKIYONLARI
+
+//String Fonksiyonları - Contains Metodu
+
+/* string metin = "laylaylom galiba sana gore sevmeler ... ";
+bool sonuc = metin.Contains("sana"); // İÇERİĞE BAKAR.
+Console.WriteLine(sonuc); */
+
+//String Fonksiyonları - StartsWith Metodu
+
+// string metin = "laylaylom galiba sana gore sevmeler ... ";
+// Console.WriteLine( metin.StartsWith("lay"));
+
+//String Fonksiyonları - EndsWith Metodu
+
+// string metin = "laylaylom galiba sana gore sevmeler...";
+// Console.WriteLine( metin.EndsWith("r..."));
+
+
+//String Fonksiyonları - Compare Metodu
+
+//Metinsel ifadeleri karşılaştırmamızı ve sonuç olarak int türde değer elde etmemizi sağlayar.
+//0 : Her iki değer birbirine eşittir.
+//1 : Soldaki sağdakinden alfanumerik olarak büyük
+//-1 : Soldaki sağdakinden alfanumerik olarak küçük
+
+/* string metin = "laylaylom galiba sana gore sevmeler...";
+Console.WriteLine(string.Compare(metin, "Z"));
+Console.WriteLine(string.Compare(metin, "a")); */
+
+
+//String Fonksiyonları - CompareTo Metodu
+
+/* string metin = "laylaylom galiba sana gore sevmeler...";
+Console.WriteLine(metin.CompareTo("Z"));
+Console.WriteLine(metin.CompareTo("a")); */
+
+
+//String Fonksiyonları - IndexOf Metodu
+
+/* string metin = "laylaylom galiba sana gore sevmeler...";
+//Verilen değerin string ifade içerisinde olup olmamasını geriye int döndüren bir fonksiyondur.
+//geriye int olarak indexNoyu döndürür.
+//-1 değerini döndürür.
+Console.WriteLine(metin.IndexOf("la"));
+Console.WriteLine(metin.IndexOf("lay"));
+Console.WriteLine(metin.IndexOf("La"));
+Console.WriteLine(metin.IndexOf("sana")); */
+
+
+//String Fonksiyonları - Insert Metodu
+
+//Elimizdeki metinsel ifadeye bir değer dahil etmemizi/eklememizi sağlayan bir fonksiyondur.
+/* string metin = "laylaylom galiba sana gore sevmeler...";
+string eklenmisMetin = metin.Insert(17, "merhaba");
+Console.WriteLine(metin);
+Console.WriteLine(eklenmisMetin); */
+
+
+//String Fonksiyonları - Remove Metodu
+
+/* string metin = "laylaylom galiba sana gore sevmeler...";
+
+//Metinsel ifadede indexel olarak verilen değer aralığını silen bir fonksiyondur.
+//Insertte olduğu gibi ilgili fonktison yapmış olduğu işlem neticesinde yeni değeri üreterek bizliere string olarak döndürecektir. Elimizdkei orjinal veri
+//değişmeyecektir.
+Console.WriteLine(metin.Remove(5)); //5. indexten sonraki tüm değerleri sil.
+Console.WriteLine(metin.Remove(5,10)); //5. indexten başla 10 adet sil ... */
+
+
+//String Fonksiyonları - Replace Metodu
+
+//Elimizdeki metinsel ifadede belirtilen değerleri yahut karakterleri, belirtilen diğer değerler ya da karakterler ile değiştirmemizi sağlayan bir fonksiyondur.
+/* string metin = "laylaylom galiba sana gore sevmeler...";
+Console.WriteLine(metin.Replace('a', 'b'));
+Console.WriteLine(metin.Replace("la", "lo")); */
+
+
+//String Fonksiyonları - Split Metodu
+
+//string metin = "laylaylom galiba sana gore sevmeler...";
+//Metinsel ifadeyi verilen değeri ayraç olarak kullanıp, parçalayan ve sonucu string dizisi olarak döndüren bir fonsiyondur.
+//string[] dizi = metin.Split(' ');
+//string[] dizi = metin.Split(' ','a');
+
+
+//String Fonksiyonları - Substring Metodu
+/* string metin = "laylaylom galiba sana gore sevmeler...";
+//Metinsel ifadenin belirli bir aralığını elde etmemizi sağlar.
+Console.WriteLine(metin.Substring(5)); //5. indexten sonuna kadar tümd eğerleri getir.
+Console.WriteLine(metin.Substring(5, 10)); //5. indexten başlayacak 10 karakter getirecektir. */
+
+// String Fonksiyonları - ToLower Metodu
+
+//Eldeki metinsel ifadenin tüm karaktelrerini küçük karakter olarak düzenler.
+/* string metin = "laylaylom galiba sana gore sevmeler...";
+Console.WriteLine(metin);
+Console.WriteLine(metin.ToLower()); */
+
+//String Fonksiyonları - ToUpper Metodu
+
+/* Eldeki metinsel ifadenin tüm karaktelrerini büyük karakter olarak düzenler.
+ string metin = "laylaylom galiba sana gore sevmeler...";
+Console.WriteLine(metin);
+Console.WriteLine(metin.ToUpper()); */
+
+
+//String Fonksiyonları - Trim Metodu
+
+//Metinsel ifadelerin varsa solundaki ve sağındaki boşluk karkatelrini temizleyen bir fonksiyondur.
+/* Console.WriteLine("ahmet cümbül");
+Console.WriteLine(" ahmet cümbül  ".Trim()); */
+
+
+//String Fonksiyonları - TrimEnd Metodu
+
+/* Console.WriteLine("ahmet cümbül");
+Console.WriteLine(" ahmet cümbül    ".TrimEnd()); // SONUNU SILER.
+
+//String Fonksiyonları - TrimStart Metodu
+
+Console.WriteLine("ahmet cümbül");
+Console.WriteLine("     ahmet cümbül    ".TrimStart()); // Basını SILER. */
+
+
+//String Fonksiyonlari ornek
+
+//Adımızın ilkten 3. sondan 5. karakterini getirelim.
+/* string adSoyad = "Gencay Yildiz";
+//1.Yontem
+Console.WriteLine(adSoyad[2]);
+Console.WriteLine(adSoyad[adSoyad.Length - 5]);
+//2.Yontem
+
+string aralik = adSoyad[2..^4];
+Console.WriteLine(aralik[aralik.Length - 1]); */
+
+
+//String Fonksiyonlari ornek 2 -Girilen Metnin İçerisinde Kaç Adet n Karakterinin Geçtiğini Hesapla
+
+/* Console.Write("Lutfen bir metin giriniz : ");
+string? metin = Console.ReadLine();
+int sayi = 0;
+for(int i=0 ; i< metin!.Length ; i++)
+{
+    if(metin[i]=='n')
+    {
+        sayi++;
+    }
+}
+Console.WriteLine(sayi); */
+
+
+//String Fonksiyonları Örnek 3 - Girilen Metindeki Kelime Sayısını Hesaplayalım
+
+using System.Collections;
+using System.ComponentModel;
+using System.Text.RegularExpressions;
+
+// Console.Write("Lutfen bir metin giriniz : ");
+// string? metin = Console.ReadLine();
+
+//1.Caozum
+/* string[] kelimeler = metin!.Split(' ');
+Console.WriteLine(kelimeler.Length); */
+
+//2.Cozum
+
+/* int adet = 1;
+while(true)
+{
+    int index = metin!.IndexOf(' ');
+    if(index == -1)
+        break;
+        adet++;
+    
+    metin = metin.Substring(index + 1);
+}
+Console.WriteLine(adet); */
+
+
+
+//ArraySegment Türü Nedir?
+
+//Bir dizinin bütününden ziyade belirli bir kısmına yahut parçasına ihtiyaç dahilinde ilgili diziyi
+//kopyalamak yerine(ki görece oldukça maliyetli bir operasyondur) bağımsız bir referans ile
+//erişmemizi ve böylece salt bir şekilde temsil etmemizi sağlayan bir yapıdır.
+
+
+//ArraySegment Türü İle Dizinin Belli Bir Alanını Referans Etmek
+
+
+/* int[] sayilar = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
+//int[] sayilar2 = sayilar[2 .. 5];
+
+ArraySegment<int> segment1 = new ArraySegment<int>(sayilar);   
+ArraySegment<int> segment2 = new ArraySegment<int>(sayilar,2,5);   
+
+segment1[0] *= 10;
+segment2[0] *= 10; */
+
+
+//ArraySegment Slicing(Dilimleme) Özelliği
+
+
+/* int[] sayilar = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
+//int[] sayilar2 = sayilar[2 .. 5];
+
+ArraySegment<int> segment = new ArraySegment<int>(sayilar);   
+ArraySegment<int> segment1 =segment.Slice(0,3);
+ArraySegment<int> segment2 =segment.Slice(4,7);
+ArraySegment<int> segment3=segment.Slice(5,10); */
+
+
+//StringSegment Türü Nedir?
+
+
+// string text = "Ölüme gidelim dedin de mazot mu yok dedik.";
+
+//StringSegment, ArraySegment'in string değerler nezdindeki bir muadilidir.
+//Esasında metinsel değerlerideki birçok analitik operasyonlardan bizleri kurtarmakta ve Substring
+//vs. gibi fonksiyonlar yerine string değerde hedef kesit üzerinde işlem yapmamizi sağlayan bir türdür.
+
+
+//StringSegment Türü İle Dizinin Belli Bir Alanını Referans Etmek
+
+//StringSegment türünü kullanabilmek için uygulamaya Microsoft.Extensions.Primitives paketinin yüklenmnesi gerekmektedir.
+/* string text = "Ölüme gidelim dedin de mazot mu yok dedik.";
+StringSegment segment = new StringSegment(text);
+StringSegment segment1 = new StringSegment(text, 2, 5); */
+
+
+//StringBuilder Sınıfı Nedir? Ne Amaçla Kullanılır?
+
+/* string isim = "Gençay";
+string soyisim = "Yildiz";
+//Console.WriteLine(isim +""+ soyisim);
+//StringBuilder, string birleştirme operasyonlarinda + operatorüne nazaran yüksek maliyeti absorbe
+//edebilmek için arkaplanda StringSegment algoritmasını kullanan ve bu algoritma ile bizlere
+//ilgili değerleri olabilecek ennn az maliyetle birleştirip döndüren bir Sınıftır.
+
+StringBuilder builder = new StringBuilder();
+builder.Append(isim);
+builder.Append(" ");
+builder.Append(soyisim);
+
+Console.WriteLine(builder.ToString()); */
+
+
+
+// Span Türü
+
+/* int[] sayilar = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
+
+Span<int> span = new Span<int>(sayilar);
+Span<int> span2 = sayilar;
+Span<int> span3 = new Span<int>(sayilar, 3, 5);
+
+Span<int> span4 = sayilar.AsSpan();
+Span<int> span5 = sayilar.AsSpan(3, 5);
+
+string text = "Sen kalbimde batan güneş, ben yollarda çilekeş ... ";
+ReadOnlySpan<char> readOnlySpan = text.AsSpan();
+ReadOnlySpan<char> span6 = text; */
+
+
+//Regular Expressions Operatörleri ^ Operatörü, Regex Sınıfının Kullanımı
+
+//^ Operatörü : Satır başının istenilen ifadeyle başlamasını sağlar.
+
+//^9 : 9asdasdj, 9123123, 9''!3123, aksdmi 123, 1239, 0912312
+
+/* string text = "912345hgdshudsuuds";
+Regex regex = new Regex("^9");
+Match match = regex.Match(text);
+Console.WriteLine(match.Success);
+
+Regex regex1 = new Regex("^91");
+Match match1 = regex1.Match(text);
+Console.WriteLine(match1.Success);
+
+string text2 = "922345hgdshudsuuds";
+Regex regex2 = new Regex("^91");
+Match match2 = regex2.Match(text2);
+Console.WriteLine(match2.Success); */
+
+
+//Regular Expressions Operatörleri \ Operatörü
+
+//\  : Belirli karakter gruplarını içermesini istiyorsak kullanırız.
+
+//D : Metinsel değerin ilgili yerinde rakam olmayan tek bir karakterin bulunması gerektiği belirtilir.
+
+//\d : Metinsel değerin ilgili yerinde 0 - 9 arasında tek bir sayı olacağı ifade edilir.
+
+//\W : Metinsel değerin ilgili yerinde alfanumerik olmayan karakterin olması gerektiği belirtilir. Alfanümerik
+//karakterler : a-z A-Z 0-9
+
+
+//\S : Metinsel değerin ilgili yerinde boşluk karakterleri(tab/space) dışında herhangi bir karakterin olamayacağı belirtilir.
+//\s : Metinsel değerin ilgili yerinde sadece boşluk karakterinin olacağı ifade edilir.
+
+//Örn;
+//9 ile başlayan, ikinci karakteri herhangi bir sayı olan ve son karakteri de boşluk olmayan bir düzenli ifade oluşturalım.
+// ^9\d\S
+
+/*string text = "912345hgdshudsuuds";
+Regex regex = new Regex(@"^9\d\S");
+Match match = regex.Match(text);
+Console.WriteLine(match.Success); */
+
+//Regular Expressions Operatörleri |(veya) Operatörü
+
+//Birden fazla karakter grubundan bir ya da birkaçının ilgili yerde olabileceğini belirtmek istiyorsak mantıksal veya operatörü kullanılır.
+
+//Baş harfi a ya da b ya da c olan metinsel ifadeyi girelim.
+//a|b|c
+
+
+/*string text = "ahmet";
+Regex regex = new Regex(@"a|b|c");
+Match match = regex.Match(text);
+Console.WriteLine(match.Success); */
+
+
+//Regular Expressions Operatörleri {n} Operatörü
+
+//Sabit sayıda karakterin olması isteniyorsa {adet} şeklinde belirtilmeli.
+
+//507-7514592
+//\d\d\d-\d\d\d\d\d\d
+//\d{3}-\d{6}
+
+
+/* string text = "";
+Regex regex = new Regex(@"\d{3}-\d{6}");
+Match match = regex.Match(text);
+Console.WriteLine(match.Success); */
+
+
+//ArrayList Koleksiyonu Tanımlama
+//ArrayList Tanımlanmış Koleksiyona Değer Atama
+
+/* int[] dizi = new int[5];
+
+ArrayList _dizi = new ArrayList();
+
+dizi[0]=5;
+
+_dizi.Add(123); */
+
+
+// ArrayList Tanımlanmış Koleksiyondan Değer Okuma
+
+/* int[] dizi = new int[17];
+
+ArrayList _dizi = new ArrayList();
+
+dizi[0]=5;
+
+_dizi.Add(123);
+
+for(int i = 0 ; i < dizi.Length ; i++)
+{
+    dizi[i]= i+10;
+
+    _dizi.Add(i+10);
+}
+
+//Diziler
+Console.WriteLine(dizi[5]);
+
+//Koleksiyonlar
+Console.WriteLine(_dizi[5]); */
+
+
+//ArrayList Boxing - Unboxing Durumlarından Dolayı Sınırlılıklar
+
+
+//ArrayList, verilen datayı boxing işlemine tabi tutuar.
+//ArrayList içerisindeki herhangi bir veriyi talep ettiğimizde o veri object olarak gelecektir. Dolayısıyla kendi 
+// türünde işlem yapabilmek için unboxing işlemine tabi tutuamız gerekir.
+
+/* int[] dizi = new int[17];
+
+ArrayList _dizi = new ArrayList();
+
+
+for(int i = 0 ; i < dizi.Length ; i++)
+{
+    dizi[i]= i+10;
+
+    _dizi.Add(i+10);
+} */
+
+/*int toplam=0;
+for(int i =0;i<_dizi.Count ; i++)
+{
+   toplam +=(int)_dizi[i]!;
+} */
+
+/* int toplam=0;
+for(int i =0;i<_dizi.Count ; i++)
+{
+   if(_dizi[i] is int)  // int deger kontrolu
+   toplam +=(int)_dizi[i]!;
+} */
+
+
+//ArrayList Collection Initializers(Koleksiyon İlklendirici)
+
+// ArrayList arraylist = new ArrayList {"Ahmet",123,'a',true};
+
+
+
+//İterasyon ile Döngü Arasındaki Fark Nedir?
+
+//Foreach(Iterasyon) Bir dongu degildir!!!!
+
+/*int[]sayilar = new int[] {2,213,432,42,34,234,432,234};
+for(int i=0;i<sayilar.Length;i++)
+{
+    
+} */
+
+//Foreach İterasyonu Nasıl Kullanılır?
+
+/* ArrayList sayilar = new ArrayList { 123, 123, 325, 2, 534, 5, 345, 345 };
+
+foreach(object item in sayilar)
+{
+   // sayilar.Add(123456);  kaynak degistigi icin foreach patlar.
+    Console.WriteLine(item);
+} */
+
+
+// C# DA HAZIR SINIFLAR VE FONKSİYONLAR
+
+//Math Sınıfı - Abs Fonksiyonu
+
+//Console.WriteLine(Math.Abs(-5)); //Mutlak deger fonksiyonu
+
+//Math Sınıfı - Ceiling Fonksiyonu
+
+//Console.WriteLine(Math.Ceiling(7.6)); // yukarıya yuvarlar.
+
+//Math Sınıfı - Floor Fonksiyonu
+
+//Console.WriteLine(Math.Floor(7.6)); // asagıya yuvarlar.
+
+//Math Sınıfı - Round Fonksiyonu
+
+/* Console.WriteLine(Math.Round(3.4)); // asagıya yuvarlanır
+Console.WriteLine(Math.Round(3.6)); // yukarıya yuvarlanır.
+Console.WriteLine(Math.Round(3.5)); // yukarıya yuvarlanır. */
+
+//Math Sınıfı - Pow Fonksiyonu
+
+//Console.WriteLine(Math.Pow(3,5));
+
+
+//Math Sınıfı - Sqrt Fonksiyonu
+
+/* Console.WriteLine(Math.Sqrt(4));
+Console.WriteLine(Math.Sqrt(16)); */
+
+
+//Math Sınıfı - Truncate Fonksiyonu
+
+// Console.WriteLine(Math.Truncate(16.7)); küsüratı atar.
+
+
+//DateTime - Now Özelliği
+
+// Console.WriteLine(DateTime.Now);
+
+//DateTime - Today Özelliği
+
+//Console.WriteLine(DateTime.Today); // sadece gun bilgisini getirir
+
+//DateTime - Compare Fonksiyonu
+
+
+/* DateTime tarih1 = new DateTime(2021, 01, 01);
+DateTime tarih2 = new DateTime(2022, 01, 01);
+
+int result = DateTime.Compare(tarih1, tarih2);
+if (result < 0)
+{
+ Console.WriteLine($"{tarih1} küçüktür {tarih2}");
+}
+else if (result == 0)
+{
+Console.WriteLine($"{tarih1} eşittir {tarih2}");
+}
+else
+{
+  Console.WriteLine($"{tarih1} büyüktür {tarih2}");
+} */
+
+
+//Random Sınıfı - Next Fonksiyonu
+
+/* Random random = new Random();
+
+Console.WriteLine(random.Next());  // 0 - ....
+Console.WriteLine(random.Next(100)); // 0 - 100
+
+// Random Sınıfı - NextDouble Fonksiyonu
+
+Console.WriteLine(random.NextDouble()); */
+
+
+
+
+
+
+
+
+
+// C# DA METOTDLAR
+
+//Metot Tanımlama/Oluşturma Varyasyonları - Geriye Değer Döndürmeyen Parametre Almayan Metot Türü
+
+
+//Geriye deger dondurmeyen,parametre almayan metot
+//Geriye Değer Döndürmeyen Parametre Alan Metot Türü
+//Geriye Değer Döndüren Parametre Almayan Metot Türü
+//Geriye Değer Döndüren Parametre Alan Metot Türü
+
+
+
+
+/* using System;
+
+ class Program
+{
+    
+    private void Metot1()
+    {
+        Console.WriteLine("Geriye deger dondurmeyen , parametre almayan metot olusturuldu");
+    }
+    
+    public void Metot2(int a)
+    {
+        Console.WriteLine("Geriye deger dondurmeyen , parametre alan metot olusturuldu");
+    }
+
+    public void Metot_2(int a,bool b)
+    {
+        Console.WriteLine("Geriye deger dondurmeyen , parametre alan metot olusturuldu");
+    }
+    
+    public int Metot3()
+    {
+        int a=5;
+        Console.WriteLine("Geriye deger donduren , parametre almayan metot olusturuldu");
+        return a;
+    }
+
+    public bool Metot4(int x)
+    {
+        
+        Console.WriteLine("Geriye deger donduren , parametre alan metot olusturuldu");
+        return false;
+    }
+
+    public int Metot_4(int x)
+    {
+        Console.WriteLine("Geriye deger donduren , parametre alan metot olusturuldu");
+        
+        return DateTime.Now.Year > 2000 ? 1 : 0 ;
+    }
+
+    
+    static void Main(string[] args)
+    {
+        Console.WriteLine();
+    }
+}   */
+
+
+
+
+/* using System;
+
+ class Program
+{
+   static public int Topla(int sayi1,int sayi2)
+    {
+        int sonuc = sayi1+sayi2;;
+        return sonuc;
+    }
+
+    static public bool PersonelEkle(string adi,string soyadi,int yas)
+    {
+        if(yas>=20)
+        {
+                Console.WriteLine("Veritabanina eklendi...");
+                return true;
+        }
+        else
+        {
+            Console.WriteLine("Personel yasi 20 den kucuk olamaz!!!");
+            return false;
+        }
+    }
+    
+    
+    static void Main(string[] args)
+    {
+       int sonuc = Topla(7,8);
+       Console.WriteLine(sonuc);
+       bool sonuc2 = PersonelEkle("Rifki","Cumbul",19);
+       if(sonuc2 == true)
+        {
+                Console.WriteLine("Sirketimize hosgeldinizz...");
+        }
+        else
+        {
+                Console.WriteLine("Buyuyup de gelinn...");
+            
+        }
+    }
+} */
+
+
+
+//Başka Sınıfta Tanımlanmış Metotların Erişimi-Referans ve Nesne İlişkisine Hafiften Temas Edelim
+
+/*Sınıf (Class) = Yeryüzündeki herhangi bir olguyu modellememizi sağlayan yapılanma! İÇerisinde ilgili olguya dair verileri tutacak
+alanları(field) barındıran ve bu alanlar üzerinde işlem yapmamızı sağlayacak olan metotları barındıran bir yapı! */
+//Nesne = Class'tan üretilen değer/veri.
+//Referans = Class'tan üretilen değeri kullanmamızı sağlayan yapı!
+
+//Başka Sınıfta Tanımlanmış Metotların Erişimi
+
+
+
+/* using System;
+
+public class Matematik
+{
+    public int Topla(int sayi1 , int sayi2)
+    {
+        return sayi1+sayi2;
+    }
+
+    public int Cikarma(int sayi1 , int sayi2)
+    {
+        return sayi1-sayi2;
+    }
+
+    public int Carpma(int sayi1 , int sayi2)
+    {
+        return sayi1*sayi2;
+    }
+
+    public int Bolme(int sayi1 , int sayi2)
+    {
+        return sayi1/sayi2;
+    }
+}
+
+ 
+ class Program
+{
+     static void X()
+    {
+        
+    }
+    static void Main(string[] args)
+    {
+      Matematik islem = new Matematik();
+      Console.WriteLine(islem.Topla(4,5));
+      Console.WriteLine(islem.Cikarma(12,5));
+      Console.WriteLine(islem.Carpma(8,5));
+      Console.WriteLine(islem.Bolme(25,5));
+      
+    }
+} */
+
+
+
+//Metotlarda Non Trailing Named Arguments Özelliği
+
+
+/* using System;
+
+ class Program
+{
+   static void X(int a , int b , string c)
+    {
+        
+    }
+    
+    static void Main(string[] args)
+    {
+      //X(5,6,"Ahmet");
+      X(c:"abc",b:5,a:15); // hedefsel gönderim sırayı degistirir
+
+      //Hangi parametreye hangi değerlerin gönderildiğini direkt görebilmek için bu özelliği kullanıırız.
+      //Göreceli bir şekilde çok parametreli fonksiyonlarda hedef parametrelere değer göndermemizi sağlayan bir özelliktir.
+    }
+} */
+ 
+
+//Metotlarda In Parametreleri (C# - In Keywordü)
+
+//1. parametrenin değerini metodun içerisinde herhangi bir yerde çağırıp kullanabiliriz.
+/*2. metot içerisinde üretilen herhangi bir değeri tutacak değişken oluşturmaktansa parametre üzerinde bu değeri
+tutabiliriz. Yani parametrenin değerini değiştirebililriz. (Çünkü parametreler özünde bir değişkendir) */
+//In komutu sayesinde parametreye verilen değeri sabit tutabilmekteyiz.
+//In komutu metodun parametresini readonly yani sadece okunabilir hale getirir.
+//In komutunun kullanıldıgı parametrelerde farklı bir assign durumu olursa derleyici hatası verecektir.
+
+/* using System;
+
+ class Program
+{
+   static void X(in int a ,int b , in char c)
+    {
+       // a=123; degeri degistiremiyoruz.
+       b=123; // b in ile isaretlenmedigi icin degeri degistirilebilir.
+       // c='a'; hata verir.
+    }
+    
+    static void Main(string[] args)
+    {
+      
+    }
+} */
+
+
+//Local Functions(Metot İçerisinde Tanımlanabilir Yerel Metotlar)
+
+//Bir metot içerisinde tanımlanmış metotlardır.
+
+/*C# da metotlar sadece classların icerisinde tanımlanır demistik. Halbbuki OOP de gorecegimiz struct, abstract class , interface , record yapılanmalarında da 
+metotlar tanımlanmaktadır!!! Metotlar bu saydıklarımızın dışında kesinlikle bbaşka bir yerde tanımlanamazzz!!!*/
+
+/*Metotlar kesinlikle metotların icerisinde tanımlanamaz demistik ancak c# 7.0 dan sonra gelen local functions ozelligi sayesinde 
+metot icerisinde metot tanımlanabilmektedir. */
+
+//TANIMLAMA KURALLARI
+
+//1.Erisim belirleyicisi (Access modifier) yazılmaz!
+//2.Local function olarak tanımlanan fonksiyon adı tanımlandıgı fonksiyondan farkli olmalidir!Aksi taktirde derleyici hatasi  VERMEZZ!
+
+//KULLANIM KURALLARI
+
+//Bir local function sadece tanımlandıgı metodun icinde kullanılır.
+//Local functionlar tanımlandıgı metodun icerisinden her yerden ulasılabilir.
+
+//AMACI
+
+/*Bir metot sadece tek bir metotda tekrarlı bir sekilde kullanılacak algoritmayi/kod parcasını/islemi o metoda
+ozel bbir sekilde tek seferlik tanimlamamızı ve kullanmamızı saglar. */
+
+//MUADILLERI
+
+//Anonim , Delegate , Func
+
+/* using System;
+
+ class Program
+{
+   public static void X()
+    {
+       Y();
+       void Y()
+        {
+            System.Console.WriteLine("Merhaba");
+        }
+       for(int i = 0; i<15 ; i++)
+        {
+           Y(); 
+        }
+
+    }
+    
+    static void Main(string[] args)
+    {
+       X();
+    }
+} */
+
+
+
+//Static Local Functions(Metot İçerisinde Tanımlanabilir Statik Yerel Metotlar)
+
+/* using System;
+
+ class Program
+{
+   public static void X(int a)
+    {
+      int b=0;
+       static void Y(int a , int b)
+        {
+            System.Console.WriteLine(a);  // static keyword u kullanıncaparametreye ya da yerel degiskene direk ulasamayız
+            System.Console.WriteLine(b);   // Y nin dısından parametre olarak gonderebiliriz.
+        }
+        Y(a,b);
+       
+
+    }
+    
+    static void Main(string[] args)
+    {
+       X(5);
+    }
+}  */
+
+
+
+//Metotlarda Overloading(Çoklu Yükleme)
+
+//Overloading : Çoklu Yükleme
+// Bir class icerisnde belirli kurallar cercevesinde ayni isimde bbirden fazla metot olusturmaya Method Overloading denir.
+
+/*Random random = new Random();
+random.Next();// bu da bir overload ornegidir icerisindeki parametre kullanimina gore sonucu degisir. */
+
+//Overloading Kurallari
+
+/* Bir sınıf icerisinde birden fazla ayni isimde metot tanımlayabilkmek icin su kurallaraq dikkat edilmelidir.
+ Metot Overloading yapabilmemiz icin metot isimlerinin ayni olmasi gerekmektedir!
+ Bu metotlar icerisinde fark yaratmamiz gerekmektedir.
+ Bu fark bizzat metot imzalarinda olmalidir. 
+ Metodlar arasında farkı yaratırken erisim belirleyicisi ya da geriye donus degerleri aktif rol oynamamaktadır
+ Parametre sayilari ya da parametre turleri farkli olmalidir. 
+ 
+ Overloading işlemine tabi tutulmuş metotlardan istediğimizi kullanabilmek için o metodun imzasına uygun parametreleri
+ tetiklememiz(ya da bir başka deyişle o imzadaki metodu kullanmamız) yeterli olacaktır. */
+
+
+/*using System;
+
+ class Matematik
+{
+    //Bir class icerisinde ayni isimde birden fazla metot tanimlanamaz!
+    public int Topla(int sayi1 , int sayi2)
+    {
+        return sayi1+sayi2;
+    }
+
+    public int Topla(int sayi1 , int sayi2 , int sayi3) // bir parametre daha ekleyice hata vermez.Bu isme Overloading yapilmistir.
+    {
+        return sayi1+sayi2+sayi3;
+    }
+
+    public int Topla(int sayi1 , int sayi2 , int sayi3 , int sayi4) // bir parametre daha ekleyice hata vermez.Bu isme Overloading yapilmistir.
+    {
+        return sayi1+sayi2+sayi3+sayi4;
+    }
+
+    public double Topla(double sayi1 , double sayi2)
+    {
+        return sayi1+sayi2;
+    }
+
+}
+ 
+ class Program
+{
+   
+    
+    static void Main(string[] args)
+    {
+       Matematik matematik = new Matematik();
+       matematik.Topla(1,2,3,4); // overloaddaki metotta yontemler ayrı ayrı gorulur ona gore biri secilir.
+    }
+} */
+
+
+
+
+
+//Recursive(Tekrarlamalı/Özyinelemeli) Metotlar
+
+//Recursive Fonksiyon : Kendi icerisinde kendisini cagıran/tetikleyen fonksiyonlardır.
+//Ozyinelemeli/Tekrarlamalı Fonk.
+
+//Recursive fonksiyonlar bir yaklasımdır!
+
+//Anlasılması , kullanılması ve anlatılması zordur.
+
+//Recursive fonksiyonler ne amacla kullanılmaktadır?
+//Ongorulemeyen , tahmin edilemeyen , sonu bilinmeyen durumlarda tercih edilebilir.
+//Dongulerin kullanıldıgı her noktada recursıve fonksiyon kullanılabilir ancak recursive fonksiyonun kullanıldıgı her yerde dongu kullanılamaz!!!
+
+
+
+     /*   void X(int a=1) //C# 9.0 dan sonra top level statement a gerek olmadıgı icin main in icinde local olarak yazıyoruz.
+        {
+            Console.WriteLine("Merhaba");
+            if(a<3)
+          {
+             X(++a);
+          }
+            
+            Console.WriteLine("Dunya"); //Dunya komutu tetiklenmez.
+        }  */
+
+        
+      /*  void X(int a=1) // recursive parametreler ile yonetilebilir hale geldi.
+        {
+            Console.WriteLine("Merhaba");
+            if(a<3)
+            {
+                X(++a);
+            }
+        }  */
+
+
+ //Ornek 1
+
+ //Belirli deger aralıgındaki 5in kati olan tum sayilari toplayan recursive fonksiyonu yazalim;
+ 
+ /*Console.WriteLine(Topla(10,20));
+ 
+ int Topla(int baslangic,int bitis)
+{
+    if(baslangic % 5 == 0 )
+    {
+        return baslangic + Topla(++baslangic,bitis);
+    }
+    if(baslangic < bitis)
+    return Topla(++baslangic,bitis);
+    return 0;
+} */
+
+ //Ornek 2
+/* List<FileInfo> files = DosyaYazdir("C:/Users/merth/OneDrive/Masaüstü/codeblocks test");
+foreach(FileInfo file in files)
+Console.WriteLine(file.FullName);
+
+List<FileInfo> DosyaYazdir(string path)
+{
+    List<FileInfo> fileInfos = new();
+    DirectoryInfo directoryInfo = new(path);
+    DirectoryInfo[] directoryInfos = directoryInfo.GetDirectories();
+    if(directoryInfos.Any())
+    {
+        foreach(DirectoryInfo directory in directoryInfos)
+        {
+           fileInfos.AddRange(DosyaYazdir(directory.FullName)); 
+        }
+    }
+    else
+       fileInfos.AddRange(directoryInfo.GetFiles());
+    
+    return fileInfos;
+} */
