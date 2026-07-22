@@ -1,0 +1,161 @@
+using System;
+using System.Collections.Generic;
+
+BarinakYonetimi barinak = new BarinakYonetimi();
+
+Kopek kopek = new Kopek("Karamel", 3, 20.5, "Golden");
+Kedi kedi = new Kedi("Pamuk", 2, 4.2, "Beyaz");
+Kus kus = new Kus("Pasa", 1, 0.3, true);
+
+barinak.YeniHayvanEkle(kopek);
+barinak.YeniHayvanEkle(kedi);
+barinak.YeniHayvanEkle(kus);
+
+barinak.EklenenHayvanlariListele();
+barinak.EgitilmeDurumu();
+
+
+abstract class Hayvan
+{
+    public string Isim { get; set; }
+    public int Yas { get; set; }
+    public double Kilo { get; set; }
+
+    public Hayvan(string isim, int yas, double kilo)
+    {
+        Isim = isim;
+        Yas = yas;
+        Kilo = kilo;
+    }
+
+    public virtual void BilgileriGoster()
+    {
+        Console.Write($"Tür: {this.GetType().Name} , İsim: {Isim} , Yaş: {Yas} , Kilo: {Kilo} kg");
+    }
+    
+    public void YemekYerMi()
+    {
+        Console.WriteLine($"{Isim} Yemek yer.");
+    }
+
+    public abstract void NasilSesCikarir();
+}
+
+interface IEgitilebilir
+{
+    void EgitimAl();
+}
+
+class Kopek : Hayvan, IEgitilebilir
+{
+    public string Cins { get; set; }
+
+    public Kopek(string isim, int yas, double kilo, string cins) : base(isim, yas, kilo)
+    {
+        Cins = cins;
+    }
+
+    public override void BilgileriGoster()
+    {
+        base.BilgileriGoster();
+        Console.WriteLine($" , Cins : {Cins}");
+    }
+    
+    public override void NasilSesCikarir()
+    {
+        Console.WriteLine($"{Isim} Havlar.");
+    }
+
+    public void EgitimAl()
+    {
+        Console.WriteLine($"{Isim} - ın cinsi : {Cins} turunun temel egitimini aldi.");
+    }
+}
+
+class Kedi : Hayvan
+{
+    public string TuyRengi { get; set; }
+
+    public Kedi(string isim, int yas, double kilo, string tuyRengi) : base(isim, yas, kilo)
+    {
+        TuyRengi = tuyRengi;
+    }
+
+    public override void BilgileriGoster()
+    {
+        base.BilgileriGoster();
+        Console.WriteLine($" , Tuy Rengi : {TuyRengi}");
+    }
+
+    public override void NasilSesCikarir()
+    {
+        Console.WriteLine($"{Isim} miyavlar.");
+    }
+}
+
+class Kus : Hayvan, IEgitilebilir
+{
+    public bool UcabilirMi { get; set; }
+
+    public Kus(string isim, int yas, double kilo, bool ucabilirMi) : base(isim, yas, kilo)
+    {
+        UcabilirMi = ucabilirMi;
+    }
+
+    public override void BilgileriGoster()
+    {
+        base.BilgileriGoster();
+        string UcmaDurumu = UcabilirMi ? "Ucabiliyor" : "Ucamiyor";
+        Console.WriteLine($" , Ucabiliyor mu : {UcmaDurumu}");
+    }
+
+    public override void NasilSesCikarir()
+    {
+        Console.WriteLine($"{Isim} cik cik diye ses cikarir.");
+    }
+
+    public void EgitimAl()
+    {
+        Console.WriteLine($"{Isim} kus turunun temel evcil yeteneklerini ogrendi.");
+    }
+}
+
+class BarinakYonetimi
+{
+    private readonly List<Hayvan> hayvanListesi;
+    
+    public BarinakYonetimi()
+    {
+        hayvanListesi = new List<Hayvan>();
+    }
+
+    public void YeniHayvanEkle(Hayvan yenihayvan)
+    {
+        hayvanListesi.Add(yenihayvan);
+        Console.WriteLine($"{yenihayvan.GetType().Name} \"{yenihayvan.Isim}\" in barinaga eklenmesi tamamlandi");
+    }
+
+    public void EklenenHayvanlariListele()
+    {
+        Console.WriteLine("\n*********** Barinaktaki Tum Hayvanlar ***********");
+        foreach (var hayvan in hayvanListesi)
+        {
+            hayvan.BilgileriGoster();
+            hayvan.NasilSesCikarir();
+            hayvan.YemekYerMi();
+            Console.WriteLine("**********************");
+        }
+    }
+
+    public void EgitilmeDurumu()
+    {
+        Console.WriteLine("\n****** Egitim Bilgileri ******");
+        foreach (var hayvan in hayvanListesi)
+        {
+            if (hayvan is IEgitilebilir egitilebilirHayvan)
+            {
+                egitilebilirHayvan.EgitimAl();
+            }
+        }
+    }
+}
