@@ -1,0 +1,134 @@
+1. Sayı Tahmin Oyunu
+Program rastgele 1-100 arası bir sayı tutsun. Kullanıcı tahmin etsin, program her seferinde "büyük", "küçük" ya da "doğru" desin. Kaç denemede bulduğunu göstersin.
+
+
+/*
+Random random = new Random();
+int tutulan_sayi = random.Next(1,101);
+int deneme=1;
+do{
+Console.Write("Lutfen tahmin ettginiz sayiyi giriniz : ");
+int tahmin_edilen;
+try
+{
+        tahmin_edilen=int.Parse(Console.ReadLine());
+}
+catch
+{
+        Console.WriteLine("Hatalı giriş! Lütfen sadece sayı giriniz.");
+        continue;
+}
+if(tahmin_edilen <1 || tahmin_edilen >100)
+    {
+        Console.WriteLine("HATA! Lutfen 1 ile 100 arasinda bir sayi giriniz");
+        continue;
+    }
+if(tahmin_edilen == tutulan_sayi)
+    {
+        Console.WriteLine("Dogru");
+        Console.WriteLine($"{deneme}. denemede buldunuz.");
+        break;
+    }
+    else if(tahmin_edilen > tutulan_sayi)
+    {
+        Console.WriteLine("Buyuk");
+        deneme++;
+    }
+    else
+    {
+        Console.WriteLine("Kucuk");
+        deneme++;
+    }
+}while(true); */
+
+// Ternary operatoru ile 
+
+/*Random random = new Random();
+int tutulan_sayi = random.Next(1,101);
+int deneme=1;
+do{
+Console.Write("Lutfen tahmin ettginiz sayiyi giriniz : ");
+int tahmin_edilen;
+try
+{
+        tahmin_edilen=int.Parse(Console.ReadLine());
+}
+catch
+{
+        Console.WriteLine("Hatalı giriş! Lütfen sadece sayı giriniz.");
+        continue;
+}
+if(tahmin_edilen <1 || tahmin_edilen >100)
+{
+        Console.WriteLine("HATA! Lutfen 1 ile 100 arasinda bir sayi giriniz");
+        continue;
+}
+string mesaj = tahmin_edilen == tutulan_sayi ? "Doğru" : (tahmin_edilen > tutulan_sayi ? "Büyük" : "Küçük");
+Console.WriteLine(mesaj);
+if(tahmin_edilen == tutulan_sayi)
+    {
+        Console.WriteLine($"{deneme}. denemede buldunuz.");
+        break;
+    }
+    deneme++;
+}while(true);  */
+
+
+
+2. Asal Sayı Bulucu
+Kullanıcıdan bir sayı alın, o sayının asal olup olmadığını kontrol edin. Ekstra: 1'den girilen sayıya kadar tüm asal sayıları listeleyin.
+
+
+/*int sayi = 0;
+        while (true)
+        {
+            Console.Write("Bir sayi girin (2 veya daha buyuk): ");
+            try
+            {
+                sayi = Convert.ToInt32(Console.ReadLine());  
+                if (sayi < 2)
+                {
+                    Console.WriteLine("Hata: 2'den kucuk sayilar asal olamaz. Lutfen tekrar deneyin.\n");
+                    continue; 
+                }
+                break; 
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Hata: Sadece tam sayi girmelisiniz! Lutfen tekrar deneyin.\n");
+            } 
+        }
+        if (AsalMi(sayi))
+        {
+            Console.WriteLine($"\n{sayi} asal bir sayidir.");
+        }
+        else
+        {
+            Console.WriteLine($"\n{sayi} asal bir sayi degildir.");
+        }
+        Console.WriteLine($"1'den {sayi}'e kadar olan asal sayilar:");
+        for (int i = 2; i <= sayi; i++)
+        {
+            if (AsalMi(i))
+            {
+                Console.Write(i + " ");
+            }
+        }
+        Console.WriteLine();
+    
+    static bool AsalMi(int sayi)
+    {
+        if (sayi < 2)
+            return false; 
+        for (int i = 2; i <= sayi / 2; i++)
+        {
+            if (sayi % i == 0)
+                return false;
+        }
+        return true;
+    }*/
+
+
+
+
+
