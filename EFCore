@@ -755,3 +755,85 @@ public class ETicaretContext : DbContext
         optionsBuilder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=ETicaretDB;Trusted_Connection=True;TrustServerCertificate=True;");
     }
 }*/
+
+
+//One to One Relationship | Tüm Detaylarıyla Birebir İlişki Yapılanması
+ESirketDbContext context = new();
+
+#region Default Conventation
+
+//Her iki entity'de Navigation Property ile birbirlerini tekil olarak referans ederek fiziksel
+//bir ilişkinin olacağı ifade edilir.
+//One to One ilişki türünde, dependent entity'nin hangisi olduğunu default olarak
+//belirleyebilmek pek kolay değildir. Bu durumda fiziksel olarak bir foreign key'e karşılık
+//property/kolon tanımlayarak çözüm getirebiliyoruz.
+//Böylece foreign key'e karşılık property tanımlayarak lüzumsuz bir kolon oluşturmuş oluyoruz.
+/*public class Calisan
+{
+    public int Id { get; set; }
+    public string Adi { get; set; }
+
+    public CalisanAdresi CalisanAdresi { get; set; }
+}
+
+public class CalisanAdresi
+{
+     public int Id { get; set; }
+     public int CalisanId { get; set; }
+    public string Adres { get; set; }
+    public Calisan Calisan { get; set; }
+} */
+
+#endregion
+
+#region Data Annotations
+//Navigation Property'ler tanimlanmalidir.
+
+//Foreign komutunun ismi default convention'ın dısında bir kolon olacaksa eger ForeignKey attribute ile bunu bildirebiliriz.
+
+//ForeignKey kolonu olusturulmak zorunda degildir.
+//1'e 1 iliskide ekstradan foreign key kolonuna ihtiyac olmayacagından dolayi dependent entity'deki id kolonunun hem foreign hem de primary key olarak kullanmayi tercih ediyoruz ve bu duruma ozen gosterilidir diyoruz.
+public class Calisan
+{
+    public int Id { get; set; }
+    public string Adi { get; set; }
+
+    public CalisanAdresi CalisanAdresi { get; set; }
+}
+
+public class CalisanAdresi
+{
+    [Key , ForeignKey(nameof(Calisan))]
+     public int Id { get; set; }
+    // [ForeignKey(nameof(Calisan))]
+
+    // public int C { get; set; }
+    public string Adres { get; set; }
+    public Calisan Calisan { get; set; }
+}
+#endregion
+
+#region Fluent API
+//Navigation property'ler tanimlanmali!
+//Fluent API yonetiminde entity'ler arasindaki iliski context sınıfı ıcerisinde OnModelCreating 
+//fonksiyonunun override edilerek metotlar araciligiyla tasarlanmasi gerekmektedir.Yani tum sorumluluk bu fonksiyon icerisindeki calismalardir.
+#endregion
+public class ESirketDbContext : DbContext
+{
+    public DbSet<Calisan> Calisanlar { get; set; }
+    public DbSet<CalisanAdresi> CalisanAdresleri { get; set; }
+  
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        // Connection string'in sonuna TrustServerCertificate=True; ekliyoruz
+        optionsBuilder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=ETSirketDB;Trusted_Connection=True;TrustServerCertificate=True;");
+    }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<CalisanAdresi>().HasKey(c => c.Id);
+
+        modelBuilder.Entity<Calisan>().HasOne(c=>c.CalisanAdresi).WithOne(c=>c.Calisan).HasForeignKey<CalisanAdresi>(c=>c.Id);
+
+    }
+}
